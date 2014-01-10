@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">"ProductTest"</string>
+    <string name="title_name">"A31 Platform Product Test 1.2"</string>
+    <string name="textresult">"测试结果"</string>
+	<string name="finalresult">"合格"</string>
+	<string name="confirm">"确认结果"</string>
+
+    <string name="flash">NAND</string>
+    <string name="flash_test">"flash"</string>
+    <string name="flashTitle">"flash测试"</string>
+    <string name="start">"开始"</string>
+    <string name="stop">"停止"</string>
+	<string name="pause">"暂停"</string>
+	<string name="last">"最后"</string>
+	<string name="next">"下一曲"</string>
+    <string name="first">"测试结果"</string>
+    <string name="second">"信息测试"</string>
+    <string name="third">"3.比较文件"</string>
+    <string name="scrollview_test">"scrollview_test"</string>
+    <string name="sdcard">SD卡</string>
+    <string name="sdcard_test">"sdcard"</string>
+    <string name="sdTitle">"sdcard测试"</string>
+    <string name="sdFirst">"测试结果"</string>
+    <string name="sdSecond">"2.复制文件"</string>
+    <string name="sdThird">"3.比较文件"</string>
+    <string name="sdram">"内存"</string>
+    <string name="memoryTitle">"内存测试"</string>
+    <string name="Copied">"复件_"</string>
+    <string name="wifi">"wifi"</string>
+    <string name="wifiTitle">"wifi测试"</string>
+	<string name="wifi_failed_connect_message">"wifi连接失败"</string>
+    <string name="bluetooth">"蓝牙"</string>
+    <string name="bluetoothTitle">"蓝牙测试"</string>
+    <string name="ethernet">"以太网"</string>
+    <string name="ethernetTitle">"以太网测试"</string>
+    <string name="Infrared">"遥控器测试"</string>
+    <string name="infrared">"遥控器"</string>
+
+    <string name="mouse">"触摸屏"</string>
+    <string name="mouseTitle">"触摸屏测试"</string>
+	<string name="mouseTip">"操作提示栏"</string>
+    <string name="left">"单击此键"</string>
+    <string name="right">"长按此键"</string>
+    <string name="drag">"触摸屏"</string>
+
+    <string name="display">"显示"</string>
+    <string name="displayTitle">"显示测试"</string>
+    <string name="displayOn">"输出DHMI"</string>
+    <string name="displayOff">"断开DHMI"</string>
+    <string name="currentResolution">"当前分辨率"</string>
+	<string name="screenCheck">"屏幕检测"</string>
+    <string name="oneResolution">"576i"</string>
+    <string name="twoResolution">"480p"</string>
+    <string name="threeResolution">"576p"</string>
+    <string name="fourResolution">"720p50"</string>
+    <string name="fiveResolution">"720p60"</string>
+    <string name="sixResolution">"1080i50"</string>
+    <string name="sevenResolution">"1080i60"</string>
+    <string name="nineResolution">"1080p50"</string>
+    <string name="tenResolution">"1080p60"</string>
+
+	<string name="recorder">"录音"</string>
+	<string name="recorderTitle">"录音测试"</string>
+
+	<string name="play">"音乐"</string>
+	<string name="playTitle">"音乐播放测试"</string>
+
+	<string name="camera">"摄像头"</string>
+	<string name="cameraTitle">"摄像头测试"</string>
+	<string name="cameraInfo">"摄像头参数"</string>
+
+	<string name="usbhost">"OTG"</string>
+	<string name="usbhostTitle">"OTG测试"</string>
+
+	<string name="touchkey">"按键"</string>
+	<string name="touchkeyTitle">"按键测试"</string>
+	<string name="touchkeyIndicates">"请点击按键"</string>
+
+	<string name="gravity">"重力"</string>
+	<string name="gravityTitle">"重力感应测试"</string>
+	<string name="gravityTip">"请旋转屏幕测试重力感应"</string>
+
+	<string name="earplug">"耳塞"</string>
+	<string name="earplugTitle">"耳塞设备测试"</string>
+	<string name="lakala">"拉卡拉"</string>
+
+	<string name="general">"多目标测试"</string>
+    <string name="generalTitle">"general测试"</string>
+    <string name="generalConnect">"开始"</string>
+    <string name="generalTest">"停止"</string>
+    <string name="generalFirst">"内存测试结果"</string>
+    <string name="generalSecond">"flash测试结果"</string>
+    <string name="generalThird">"SD卡测试结果"</string>
+	<string name="generalFourth">"OTG测试结果"</string>
+	<string name="generalFifth">"WIFI测试结果"</string>
+	<string name="generalSixth">"蓝牙测试结果"</string>
+
+	<string name="report">"测试报告"</string>
+	<string name="ReportTitle">"测试报告"</string>
+</resources>

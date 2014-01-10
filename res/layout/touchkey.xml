@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/textTouchkey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/touchkeyTitle"
+        android:textSize="30px" />
+    <TextView
+        android:id="@+id/textIndicates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/touchkeyIndicates"
+        android:textSize="30px" />
+    <TextView
+        android:id="@+id/message1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:text="@string/first"
+        android:textColor="#000000"
+        android:textSize="30px" />
+</LinearLayout>
