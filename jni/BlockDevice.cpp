@@ -13,8 +13,6 @@ BlockDevice::BlockDevice():
 {
 	memset(&mBlock, 0, sizeof(struct Block));
 	memset(&nBlock, 0, sizeof(struct NonvolatileBlock));
-	memorySize = getMemoryInfo();
-	innerFlashSize = getNandflashInfo();
 }
 
 BlockDevice::~BlockDevice()
@@ -60,78 +58,7 @@ int BlockDevice::InitBlock()
 	ALOGD("src mem md5: %s\n", mBlock.md5val);
 	return 0;
 }
-#define MAXLINE 128
-int BlockDevice::getMemoryInfo()
-{
-	int result;
-    FILE * memfile = NULL;
-    char arr[MAXLINE+1];
-    memfile = fopen("/proc/meminfo", "r");
-    if(memfile == NULL){
-        ALOGD("read /proc/meminfo err %d\n", errno);
-        return -1;
-    }
-    while ((fgets(arr, MAXLINE, memfile)) != NULL){
-        if(strstr(arr, "MemTotal")){
-			sscanf(arr, "%*[^0-9]%d", &result);
-			ALOGD("Total Memory: %d\n", result);
-			break;
-		}
-    }
-	fclose(memfile);
-	return result;
-}
 
-int BlockDevice::getNandflashInfo()
-{
-	int result = 0, temp, i = 0;
-	FILE *diskfile = NULL;
-	char arr[MAXLINE+1];
-	char obj[24] = {0,};
-	char * p, *pp;
-    diskfile = fopen("/proc/partitions", "r");
-    if(diskfile == NULL){
-        ALOGD("read /proc/ err %d\n", errno);
-        return -1;
-    }
-	while ((fgets(arr, MAXLINE, diskfile)) != NULL){
-		if(i == 0 || i == 1){
-			i++;
-			continue;
-		}
-		if(i == 2){
-			p = arr;
-			while(*p != '\0'){
-				if(*p <= 'z' && *p >= 'a')
-					break;
-				p++;
-			}
-			pp = obj;
-			while(*p != '\0' && *p != 32){
-				*pp++ = *p++;
-			}
-			*pp = '\0';
-			ALOGD("obj:%s\n", obj);
-			if(!strncmp(obj, "mmcblk0", 7)){
-				sscanf(arr, "%*d%*d%d", &result);
-				goto err;
-			}else if(!strncmp(obj, "nand", 4))
-				strcpy(obj, "nand");
-			else
-				strcpy(obj, "mmcblk0");
-			i++;
-		}
-		if(strstr(arr, obj)){
-			sscanf(arr, "%*d%*d%d", &temp);
-			ALOGD("nand block: %d\n", temp);
-			result += temp;
-		}
-	}
-err:
-	ALOGD("total block size: %d\n", result);
-	fclose(diskfile);
-	return result;
-}
 int BlockDevice::CompareMd5(char src[32], char dst[32])
 {
 	int i = 0;
@@ -218,7 +145,7 @@ int BlockDevice::CopyToDisk(struct NonvolatileBlock * nblock)
 	int size = write(nblock->fd, mBlock.buf, mBlock.Size);
 	if(size != mBlock.Size){
 		ALOGE("write to disk err: %d %s\n", errno, strerror(errno));
-		return -ENOTTY;
+		return -ENOSPC;
 	}
 	ALOGD("write size: %d\n", size);
 	/*get disk block data md5 value*/
@@ -258,10 +185,9 @@ int BlockDevice::CopyToNand()
 	strcat(block->Path, FILENAME);
 	ALOGD("nand path : %s\n", block->Path);
 
-	avail = getDiskFreeSpace(block);
-	if(avail < mBlockSize / 1024){
-		return -ENOSPC;
-	}
-	
+	//avail = getDiskFreeSpace(block);
+	//if(avail < mBlockSize / 1024){
+	//	return -ENOSPC;
+	//}
 	return CopyToDisk(block);
 }

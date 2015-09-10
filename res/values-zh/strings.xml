@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">"ProductTest"</string>
+    <string name="title_name">"A31 Platform Product Test 1.5"</string>
+    <string name="textresult">"测试结果"</string>
+	<string name="finalresult">"合格"</string>
+	<string name="confirm">"确认结果"</string>
+
+    <string name="flash">NAND</string>
+    <string name="flash_test">"flash"</string>
+    <string name="flashTitle">"flash测试"</string>
+    <string name="start">"开始"</string>
+    <string name="stop">"停止"</string>
+	<string name="pause">"暂停"</string>
+	<string name="last">"最后"</string>
+	<string name="next">"下一曲"</string>
+    <string name="first">"测试结果"</string>
+    <string name="second">"信息测试"</string>
+    <string name="third">"3.比较文件"</string>
+    <string name="scrollview_test">"scrollview_test"</string>
+    <string name="sdcard">SD卡</string>
+    <string name="sdcard_test">"sdcard"</string>
+    <string name="sdTitle">"sdcard测试"</string>
+    <string name="sdFirst">"测试结果"</string>
+    <string name="sdSecond">"2.复制文件"</string>
+    <string name="sdThird">"3.比较文件"</string>
+    <string name="sdram">"内存"</string>
+    <string name="memoryTitle">"内存测试"</string>
+    <string name="Copied">"复件_"</string>
+    <string name="wifi">"wifi"</string>
+    <string name="wifiTitle">"wifi测试"</string>
+	<string name="wifi_failed_connect_message">"wifi连接失败"</string>
+    <string name="bluetooth">"蓝牙"</string>
+    <string name="bluetoothTitle">"蓝牙测试"</string>
+    <string name="ethernet">"以太网"</string>
+    <string name="ethernetTitle">"以太网测试"</string>
+    <string name="Infrared">"遥控器测试"</string>
+    <string name="infrared">"遥控器"</string>
+
+    <string name="mouse">"触摸屏"</string>
+    <string name="mouseTitle">"触摸屏测试"</string>
+	<string name="mouseTip">"操作提示栏"</string>
+    <string name="left">"单击此键"</string>
+    <string name="right">"长按此键"</string>
+    <string name="drag">"触摸屏"</string>
+
+    <string name="display">"显示"</string>
+    <string name="displayTitle">"显示测试"</string>
+    <string name="displayOn">"输出DHMI"</string>
+    <string name="displayOff">"断开DHMI"</string>
+    <string name="currentResolution">"当前分辨率"</string>
+	<string name="screenCheck">"屏幕检测"</string>
+    <string name="oneResolution">"576i"</string>
+    <string name="twoResolution">"480p"</string>
+    <string name="threeResolution">"576p"</string>
+    <string name="fourResolution">"720p50"</string>
+    <string name="fiveResolution">"720p60"</string>
+    <string name="sixResolution">"1080i50"</string>
+    <string name="sevenResolution">"1080i60"</string>
+    <string name="nineResolution">"1080p50"</string>
+    <string name="tenResolution">"1080p60"</string>
+
+	<string name="recorder">"录音"</string>
+	<string name="recorderTitle">"录音测试"</string>
+
+	<string name="play">"音乐"</string>
+	<string name="playTitle">"音乐播放测试"</string>
+
+	<string name="camera">"摄像头"</string>
+	<string name="cameraTitle">"摄像头测试"</string>
+	<string name="cameraInfo">"摄像头参数"</string>
+
+	<string name="usbhost">"OTG"</string>
+	<string name="usbhostTitle">"OTG测试"</string>
+
+	<string name="touchkey">"按键"</string>
+	<string name="touchkeyTitle">"按键测试"</string>
+	<string name="touchkeyIndicates">"请点击按键"</string>
+
+	<string name="gravity">"重力"</string>
+	<string name="gravityTitle">"重力感应测试"</string>
+	<string name="gravityTip">"请旋转屏幕测试重力感应"</string>
+
+	<string name="earplug">"耳塞"</string>
+	<string name="earplugTitle">"耳塞设备测试"</string>
+	<string name="lakala">"拉卡拉"</string>
+	<string name="handsfree">"耳机免提"</string>
+
+	<string name="general">"多目标测试"</string>
+    <string name="generalTitle">"general测试"</string>
+    <string name="generalConnect">"开始"</string>
+    <string name="generalTest">"停止"</string>
+    <string name="generalFirst">"内存测试结果"</string>
+    <string name="generalSecond">"flash测试结果"</string>
+    <string name="generalThird">"SD卡测试结果"</string>
+	<string name="generalFourth">"OTG测试结果"</string>
+	<string name="generalFifth">"WIFI测试结果"</string>
+	<string name="generalSixth">"蓝牙测试结果"</string>
+
+	<string name="report">"测试报告"</string>
+	<string name="ReportTitle">"测试报告"</string>
+    <string name="extsd_success_string">"外部存储卡测试成功"</string>
+    <string name="extsd_failure_string">"外部存储卡测试失败"</string>
+    <string name="extsd_not_exist_string">"没有检测到外部存储卡"</string>
+    <string name="extsd_not_enopy_space_string">"外部存储卡没有足够空间"</string>
+    <string name="extsd_copy_error_string">"外部存储卡拷贝数据错误"</string>
+    <string name="sdcard_available_space">"SD卡可用空间:"</string>
+    <string name="sdcard_total_capacity">"SD卡总容量:"</string>
+    <string name="being_test">"正在测试中..."</string>
+	<string name="usbhost_success_string">"OTG测试成功"</string>
+    <string name="usbhost_failure_string">"OTG测试失败"</string>
+    <string name="usbhost_not_exist_string">"没有检测到U盘"</string>
+    <string name="usbhost_not_enopy_space_string">"U盘没有足够空间"</string>
+    <string name="usbhost_copy_error_string">"U盘拷贝数据错误"</string>
+    <string name="usbhost_available_space">"USB可用空间:"</string>
+    <string name="usbhost_total_capacity">"USB总容量:"</string>
+	<string name="bluetooth_success">"蓝牙测试成功"</string>
+	<string name="bluetooth_failed">"蓝牙测试失败"</string>
+    <string name="bluetooth_is_success">"蓝牙是否测试成功"</string>
+	<string name="yes">"是"</string>
+	<string name="no">"否"</string>
+    <string name="camera_success">"摄像头测试成功"</string>
+	<string name="camera_failed">"摄像头测试失败"</string>
+    <string name="no_camera">"没有摄像头"</string>
+	<string name="camera_test">"摄像头测试"</string>
+	<string name="million_pixels">"万像素"</string>
+    <string name="camera_is_success">"摄像头是否测试成功"</string>
+    <string name="display_success">"显示屏测试成功"</string>
+	<string name="display_failed">"显示屏测试失败"</string>
+    <string name="current_resolution">"当前分辨率:"</string>
+	<string name="display_test">"显示屏测试 (分辨率:"</string>
+    <string name="display_is_success">"显示屏是否测试成功"</string>
+    <string name="lakala_success">"拉卡拉测试成功"</string>
+	<string name="lakala_failed">"拉卡拉测试失败"</string>
+    <string name="no_pin">"检测没有设备插入"</string>
+	<string name="three_pin">"检测三头设备插入"</string>
+    <string name="four_pin">"检测四头设备插入"</string>
+    <string name="earplug_is_success">"拉卡拉是否测试成功"</string>
+    <string name="memory_test_result">"内存测试结果"</string>
+    <string name="flash_test_result">"Flash测试结果"</string>
+	<string name="sdcard_test_result">"SD 测试结果"</string>
+    <string name="u_disc_test_result">"U 盘测试结果"</string>
+	<string name="gravity_success">"重力感应测试成功"</string>
+	<string name="gravity_failed">"重力感应测试失败"</string>
+    <string name="gravity_is_success">"重力感应是否测试成功"</string>
+	<string name="memory_success_string">"内存测试成功"</string>
+    <string name="memory_not_enopy_space_string">"没有足够的内存"</string>
+    <string name="memory_copy_error_string">"内存拷贝数据错误"</string>
+    <string name="memory_test">"内存测试(内存总量:"</string>
+	<string name="recorder_success">"录音测试成功"</string>
+	<string name="recorder_failed">"录音测试失败"</string>
+    <string name="recorder_is_success">"录音是否测试成功"</string>
+	<string name="music_success">"音乐测试成功"</string>
+	<string name="music_failed">"音乐测试失败"</string>
+    <string name="music_is_success">"音乐是否测试成功"</string>
+	<string name="touchscreen_success">"触摸屏测试成功"</string>
+	<string name="touchscreen_failed">"触摸屏测试失败"</string>
+	<string name="tip_touchscreen">"请尽可能触摸屏幕的所有位置以检测是否存在死角"</string>
+	<string name="left_keydown">"单击此键成功"</string>
+	<string name="long_keydown">" 长按此键成功"</string>
+    <string name="touchscreen_is_success">"触摸屏是否测试成功"</string>
+	<string name="nandflash_success_string">"内部存储卡测试成功"</string>
+	<string name="nandflash_not_enopy_space_string">"没有足够的空间"</string>
+    <string name="nandflash_copy_error_string">"拷贝数据到内部存储卡错误"</string>
+	<string name="nandflash_no_memory_string">"没有足够的内存"</string>
+	<string name="nandflash_no_access_string">"不能获取内部存储卡权限"</string>
+    <string name="nandflash_test">"flash测试(flash总量:"</string>
+    <string name="volume_up_success">"音量+ 测试成功"</string>
+	<string name="volume_down_failed">"音量- 测试成功"</string>
+    <string name="click_sound_button">"请按音量按键"</string>
+
+
+    <string name="serialport">"串口"</string>
+    
+    <string name="battery">"电池"</string>
+	 <string name="chargerAcOnline">"交流电连接:"</string>
+ 	<string name="chargerUsbOnline">"USB线连接:"</string>
+	<string name="chargerWirelessOnline">"无线充电器连接:"</string>
+	<string name="batteryStatus">"电池状态:"</string>
+	<string name="batteryHealth">"电池健康:"</string>
+	<string name="batteryPresent">"电池现状:"</string>
+	<string name="batteryLevel">"电池电量:"</string>
+	<string name="batteryVoltage">"电池电压:"</string>
+	<string name="batteryCurrentNow">"当前电池电流:"</string>
+	<string name="batteryChargeCounter">"电池充电指示:"</string>
+	<string name="batteryTemperature">"电池温度:"</string>
+	<string name="batteryTechnology">"电池技术:"</string>
+	<string name="charger_yes">"是"</string>
+	<string name="charger_no">"否"</string>
+
+</resources>

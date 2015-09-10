@@ -94,67 +94,38 @@ static jint getMemoryInfo_native(JNIEnv * env,jobject jobj)
 }
 static jint getNandflashInfo_native(JNIEnv * env,jobject jobj)
 {
-	int result = 0, temp, i = 0;
+	int result = 0, emmc, temp, size;
 	FILE *diskfile = NULL;
 	char arr[MAXLINE+1];
 	char obj[24] = {0,};
-	char * p, *pp;
+	char * p;
     diskfile = fopen("/proc/partitions", "r");
     if(diskfile == NULL){
         ALOGD("read /proc/ err %d\n", errno);
         return -1;
     }
 	while ((fgets(arr, MAXLINE, diskfile)) != NULL){
-		if(i == 0 || i == 1){
-			i++;
-			continue;
-		}
-		if(i == 2){
-			p = arr;
-			while(*p != '\0'){
-				if(*p <= 'z' && *p >= 'a')
-					break;
-				p++;
-			}
-			pp = obj;
-			while(*p != '\0' && *p != 32){
-				*pp++ = *p++;
-			}
-			*pp = '\0';
-			ALOGD("obj:%s\n", obj);
-			if(!strncmp(obj, "mmcblk0", 7)){
-				sscanf(arr, "%*d%*d%d", &result);
-				goto err;
-			}else if(!strncmp(obj, "nand", 4))
-				strcpy(obj, "nand");
-			else
-				strcpy(obj, "mmcblk0");
-			i++;
-		}
-		if(strstr(arr, obj)){
+		if(strstr(arr, "nand")){
 			sscanf(arr, "%*d%*d%d", &temp);
 			ALOGD("nand block: %d\n", temp);
 			result += temp;
 		}
+		if(p = strstr(arr, "mmcblk0")){
+			size = strlen(p);
+			ALOGD("size: %d\n", size);
+			if(size <= 8){
+				sscanf(arr, "%*d%*d%d", &emmc);
+			}
+		}
+	}
+	if(result <= 0){
+		result = emmc;
+		ALOGD("eMMC flash");
 	}
 err:
 	ALOGD("total block size: %d\n", result);
 	fclose(diskfile);
 	return result/1024;
-/*	int err=-1;
-	struct BlockDevice *dev;
-	struct block_handle *handle=&g_block_handle;
-	pthread_mutex_lock(&handle->lock);
-	dev=handle->dev;
-	if(!dev){
-		ALOGE("DISP dones't init");
-		goto err_exit;
-	}
-	err = dev->innerFlashSize;
-	err = err / 1024;
-err_exit:
-	pthread_mutex_unlock(&handle->lock);
-	return err;*/
 }
 static jint copyMemBlock_native(JNIEnv * env,jobject jobj, jint arg)
 {
@@ -202,8 +173,8 @@ static int register_com_softwinner_adversiting(JNIEnv *env)
 {
         jclass clazz;
         //F_LOG;
-        if ((clazz = env->FindClass("com/test/Block")) == NULL ){
-                printf("register_com_test failed.");
+        if ((clazz = env->FindClass("com/thtfit/test/Block")) == NULL ){
+                printf("register_com_thtfit_test failed.");
                 return -1;
         }
         return env->RegisterNatives(clazz, method_table,sizeof(method_table)/sizeof(method_table[0]));

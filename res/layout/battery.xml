@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10px" >
+    
+ 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/chargerAcOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chargerAcOnline"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/chargerAcOnlineText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10px"
+        android:layout_marginBottom="10px"
+        android:background="#333333"
+        android:text="@string/charger_no"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+  
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/chargerUsbOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/chargerUsbOnline"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/chargerUsbOnlineText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:text="@string/charger_no"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/chargerWirelessOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/chargerWirelessOnline"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/chargerWirelessOnlineText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:text="@string/charger_no"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryStatus"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryStatusText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+   	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryHealth"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryHealthText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryPresent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryPresent"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryPresentText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+   	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryLevel"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryLevelText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryVoltage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryVoltage"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryVoltageText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryCurrentNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryCurrentNow"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryCurrentNowText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryChargeCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryChargeCounter"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryChargeCounterText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryTemperature"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryTemperatureText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/batteryTechnology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/batteryTechnology"
+        android:textSize="30px" />
+  
+    <TextView
+        android:id="@+id/batteryTechnologyText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+
+</LinearLayout>

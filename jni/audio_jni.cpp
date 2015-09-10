@@ -27,8 +27,8 @@ static JNINativeMethod method_table[] = {
 static int register_com_softwinner_adversiting(JNIEnv *env)
 {
     jclass clazz;
-    if ((clazz = env->FindClass("com/test/EarplugActivity")) == NULL ){
-        printf("register_com_test failed.");
+    if ((clazz = env->FindClass("com/thtfit/test/EarplugActivity")) == NULL ){
+        printf("register_com_thtfit_test failed.");
         return -1;
     }
     return env->RegisterNatives(clazz, method_table,sizeof(method_table)/sizeof(method_table[0]));

@@ -24,15 +24,15 @@
             android:text="@string/lakala"
             android:textSize="30px" >
         </Button>
-<!--   <Button
+   <Button
             android:id="@+id/button_over"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100px"
             android:gravity="center"
-            android:text="@string/stop"
+            android:text="@string/handsfree"
             android:textSize="30px" >
-        </Button>-->
+        </Button>
     </LinearLayout>
     <TextView
    	    android:id="@+id/message1"

@@ -13,7 +13,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
-#define BLOCKSIZE 10*1024*1024
+#define BLOCKSIZE 20*1024*1024
 
 #define NANDPATH "/mnt/sdcard/"
 #define SDPATH "/mnt/extsd/"

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.test"
+    package="com.thtfit.test"
     android:installLocation="auto" >
     <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
 	            android:protectionLevel="signatureOrSystem" />
-
     <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -23,6 +22,8 @@
     <uses-permission android:name="android.permission.READ_SYNC_STATS" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
  	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-feature android:name="android.hardware.camera" />
@@ -112,9 +113,27 @@
 			android:name="ReportActivity"
 			android:screenOrientation="landscape"
 			android:label="report"/>
+        <activity
+			android:name="BatteryActivity"
+			android:screenOrientation="landscape"
+			android:label="battery"/>
 		<activity
 			android:name="ScreenActivity"
 			android:screenOrientation="landscape"
-			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>		
+		<activity
+			android:name="SerialActivity"
+			android:screenOrientation="landscape"
+			android:label="serial"/>
+		<activity
+		    android:name="UsbDevicesActivity"
+		    android:screenOrientation="landscape"
+		    android:label="UsbDevices"
+		     />
+		<activity
+		    android:name="UsbInfoActivity"
+		    android:screenOrientation="landscape"
+		    android:label="UsbDevices"
+		     />
     </application>
 </manifest>

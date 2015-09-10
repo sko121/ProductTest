@@ -45,4 +45,12 @@
         android:text="@string/sdFirst"
         android:textColor="#000000"
         android:textSize="30px" />
+    <TextView
+        android:id="@+id/sdText2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:textColor="#000000"
+        android:textSize="30px" />
 </LinearLayout>

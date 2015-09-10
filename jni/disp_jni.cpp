@@ -5,7 +5,7 @@
 #include <dlfcn.h>
 #include "disp_device.h"
 
-#define	LOCAL_LIBRARY_PATH	"/data/data/com.test/lib"
+#define	LOCAL_LIBRARY_PATH	"/data/data/com.thtfit.test/lib"
 #define	LOCAL_LIBRARY_FULL_NAME		LOCAL_LIBRARY_PATH"/libdisphdmi.so"
 
 #define F_LOG ALOGI("%s, line: %d", __FUNCTION__, __LINE__)
@@ -199,9 +199,9 @@ static int register_com_softwinner_adversiting(JNIEnv *env)
 {
         jclass clazz;
         //F_LOG;
-        if ((clazz = env->FindClass("com/test/Hdmi")) == NULL ){
+        if ((clazz = env->FindClass("com/thtfit/test/Hdmi")) == NULL ){
 
-                printf("register_com_test failed.");
+                printf("register_com_thtfit_test failed.");
                 return -1;
         }
         //F_LOG;
