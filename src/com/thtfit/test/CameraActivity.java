@@ -77,8 +77,9 @@ public class CameraActivity extends Activity
 	}
 	private void cameraTest(){
 		Intent mIntent = new Intent();
-		ComponentName comp = new ComponentName("com.android.gallery3d",
-				"com.android.camera.CameraLauncher");
+ 		ComponentName comp = new ComponentName("com.android.awgallery",
+                                "com.android.camera.CameraLauncher");
+
 		mIntent.setComponent(comp);
 		//mIntent.addCategory(Intent.CATEGORY_LAUNCHER);
 		//mIntent.setFlags(0x10200000);
@@ -127,11 +128,6 @@ public class CameraActivity extends Activity
 	OnClickListener viewlisten = new OnClickListener(){
 	public void onClick(View v) {
 		if(v.equals(startButton)){
-			if(!isExistCamera){
-				mText.setText(NO_CAMERA);
-				mText.setTextColor(errColor);
-				return;
-			}
 			try{
 				cameraTest();	
 			}catch(Exception e){
