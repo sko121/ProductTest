@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">"ProductTest"</string>
-    <string name="title_name">"A31 Platform Product Test 1.5"</string>
+    <string name="title_name">"A83T Platform Product Test 1.5"</string>
     <string name="textresult">"Test result"</string>
 	<string name="finalresult">"Finalresult"</string>
 	<string name="confirm">"Confirm"</string>
