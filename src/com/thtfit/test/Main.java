@@ -19,6 +19,7 @@ public class Main extends Activity implements OnClickListener {
 	private Button playButton, recorderButton, earplugButton;
 	private Button generalButton, reportButton;
     private Button serialport,batteryButton;
+    private Button mactobarcodeButton;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class Main extends Activity implements OnClickListener {
 		reportButton = (Button)findViewById(R.id.button_report);
         serialport = (Button)findViewById(R.id.button_serialport);
         batteryButton = (Button)findViewById(R.id.button_battery);
+        mactobarcodeButton = (Button)findViewById(R.id.button_mactobarcode);
 
 		flashButton.setOnClickListener(this);
 		sdcardButton.setOnClickListener(this);
@@ -62,6 +64,8 @@ public class Main extends Activity implements OnClickListener {
 
         serialport.setOnClickListener(this);
 		batteryButton.setOnClickListener(this);
+		
+		mactobarcodeButton.setOnClickListener(this);
 
 	}
     @Override
@@ -136,6 +140,9 @@ public class Main extends Activity implements OnClickListener {
     	startActivity(new Intent(Main.this, BatteryActivity.class));
 		Log.d(LOG_TAG, "battery");
 
+	}else if(v.equals(mactobarcodeButton)){
+		startActivity(new Intent(Main.this,MactobarcodeActivity.class));
+		Log.d(LOG_TAG,"mactobarcode");
 	}
 	}
 }

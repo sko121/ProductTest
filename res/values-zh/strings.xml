@@ -187,5 +187,7 @@
 	<string name="batteryTechnology">"电池技术:"</string>
 	<string name="charger_yes">"是"</string>
 	<string name="charger_no">"否"</string>
+	
+	<string name="mactobarcode">"MAC地址转换为条形码"</string>
 
 </resources>

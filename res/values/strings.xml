@@ -187,6 +187,8 @@
 	<string name="batteryTechnology">"BatteryTechnology:"</string>
 	<string name="charger_yes">"Yes"</string>
 	<string name="charger_no">"No"</string>
+	
+	<string name="mactobarcode">"MAC2Barcode"</string>
 
 	
 	<string name="usb_version_">USB Version:</string>

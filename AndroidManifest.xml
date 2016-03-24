@@ -135,5 +135,10 @@
 		    android:screenOrientation="landscape"
 		    android:label="UsbDevices"
 		     />
+		<activity
+		    android:name="MactobarcodeActivity"
+		    android:screenOrientation="landscape"
+		    android:label="mactobarcode"
+		     />
     </application>
 </manifest>
