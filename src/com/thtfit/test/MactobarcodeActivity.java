@@ -41,8 +41,8 @@ public class MactobarcodeActivity extends Activity{
         setContentView(R.layout.mactobarcode);
         
        defBright = getScreenBrightness();
-       saveScreenBrightness(255);
-       setScreenBrightness(255);
+       //saveScreenBrightness(255);	//this will efect the system bright
+       setScreenBrightness(setBright);
         
         
         macAddress = getWifiaddr();
@@ -56,11 +56,11 @@ public class MactobarcodeActivity extends Activity{
 		Bitmap bitmap = null;
 		ImageView iv = new ImageView(this);
 		bitmap = creatBarcode(getApplicationContext(),
-				macAddress, 600, 300, true);
+				macAddress, 900, 450, true);
 		iv.setImageBitmap(bitmap);
 		iv.setScaleType(ScaleType.FIT_CENTER);
-		setContentView(iv, new LayoutParams(LayoutParams.WRAP_CONTENT,
-				LayoutParams.WRAP_CONTENT));
+		//setContentView(iv);
+		setContentView(iv, new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
             
     }  
     private String getWifiaddr() {
@@ -156,7 +156,7 @@ public class MactobarcodeActivity extends Activity{
 		Bitmap ruseltBitmap=null;
 		if (displayCode) {
 			Bitmap barcodeBitmap=encodeAsBitmap(contents, barcodeFormat, desiredWidth, desiredHeight);
-			Bitmap codeBitmap=creatCodeBitmap(contents, desiredWidth+2*marginW, desiredHeight, context);
+			Bitmap codeBitmap=creatCodeBitmap(contents, desiredWidth, 100, context);
 			ruseltBitmap=mixtureBitmap(barcodeBitmap, codeBitmap, new PointF(0, desiredHeight));
 			//ruseltBitmap = codeBitmap;
 		} else {
@@ -179,11 +179,13 @@ public class MactobarcodeActivity extends Activity{
 	    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
         tv.setLayoutParams(layoutParams);
         tv.setText(contents);
+        tv.setTextSize(50);
         tv.setHeight(height);
         tv.setGravity(Gravity.CENTER_HORIZONTAL);
         tv.setWidth(width);
         tv.setDrawingCacheEnabled(true);  
         tv.setTextColor(Color.BLACK);
+        tv.setBackgroundColor(Color.WHITE);
         tv.measure(  
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),  
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));  
@@ -248,10 +250,11 @@ public class MactobarcodeActivity extends Activity{
 		        if (first == null || second == null || fromPoint == null) {  
 		            return null;  
 		        }  
-		        Bitmap newBitmap = Bitmap.createBitmap(first.getWidth()+second.getWidth()+marginW, first.getHeight()+second.getHeight()
+		        Bitmap newBitmap = Bitmap.createBitmap((first.getWidth()>second.getHeight()?first.getWidth():second.getWidth())
+		        		, first.getHeight()+second.getHeight()
 		        		, Config.ARGB_4444); 
 		        Canvas cv = new Canvas(newBitmap);  
-		        cv.drawBitmap(first,marginW,0,null);  
+		        cv.drawBitmap(first,0,0,null);  
 		        cv.drawBitmap(second, fromPoint.x, fromPoint.y, null);  
 		        cv.save(Canvas.ALL_SAVE_FLAG);  
 		        cv.restore();
