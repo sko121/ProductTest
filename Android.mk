@@ -24,6 +24,6 @@ include $(BUILD_MULTI_PREBUILT)
 
 
 include $(CLEAR_VARS)
-#include $(LOCAL_PATH)/jni/Android.mk
+include $(LOCAL_PATH)/jni/Android.mk
 include $(call all-makefiles-under,$(LOCAL_PATH)/*)
 
