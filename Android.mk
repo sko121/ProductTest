@@ -6,8 +6,7 @@ include $(CLEAR_VARS)
 
 LOCAL_STATIC_JAVA_LIBRARIES := zxing
 
-#LOCAL_MODULE_TAGS := eng
-LOCAL_MODULE_TAGS := user
+LOCAL_MODULE_TAGS := eng
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files)
 

@@ -9,7 +9,7 @@
 #define	LOCAL_LIBRARY_FULL_NAME		LOCAL_LIBRARY_PATH"/libdisphdmi.so"
 
 #define F_LOG ALOGI("%s, line: %d", __FUNCTION__, __LINE__)
-#define	DEBUG_INFO(fmt,args...) ALOGD("%s(%d) "fmt"", __FUNCTION__, __LINE__,##args);
+#define	DEBUG_INFO(fmt,args...) ALOGD("%s(%d)" "fmt", __FUNCTION__, __LINE__,##args);
 
 using namespace android;
 
