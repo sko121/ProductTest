@@ -6,13 +6,14 @@ include $(CLEAR_VARS)
 
 LOCAL_STATIC_JAVA_LIBRARIES := zxing
 
-LOCAL_MODULE_TAGS := eng
+#LOCAL_MODULE_TAGS := eng
+LOCAL_MODULE_TAGS := user
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
 LOCAL_PACKAGE_NAME := ProductTest
 LOCAL_CERTIFICATE := shared
-LOCAL_JNI_SHARED_LIBRARIES := libdisp_jni  libblock_jni libaudio_jni
+LOCAL_JNI_SHARED_LIBRARIES := libdisp_jni  libblock_jni libthtfit_audio_jni
 
 
 include $(BUILD_PACKAGE)

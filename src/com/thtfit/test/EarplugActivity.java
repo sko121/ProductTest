@@ -190,7 +190,7 @@ public class EarplugActivity extends Activity implements OnClickListener {
 	}
 	public native int native_getEarplugHead();
 	static {
-		System.loadLibrary("audio_jni");
+		System.loadLibrary("thtfit_audio_jni");
 	}
 }
 

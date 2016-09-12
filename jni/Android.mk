@@ -71,7 +71,7 @@ endif
 LOCAL_LDLIBS := -ldl -llog
 LOCAL_PRELINK_MODULE := false
 
-LOCAL_MODULE:= libaudio_jni
+LOCAL_MODULE:= libthtfit_audio_jni
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
