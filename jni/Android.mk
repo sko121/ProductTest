@@ -77,7 +77,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 TARGET_PLATFORM := android-3
-LOCAL_MODULE    := serial_port
+LOCAL_MODULE    := libserial_port
 LOCAL_SRC_FILES := SerialPort.c
 LOCAL_LDLIBS    := -llog
 

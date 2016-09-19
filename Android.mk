@@ -11,8 +11,9 @@ LOCAL_MODULE_TAGS := eng
 LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
 LOCAL_PACKAGE_NAME := ProductTest
+LOCAL_DEX_PREOPT := false
 LOCAL_CERTIFICATE := shared
-LOCAL_JNI_SHARED_LIBRARIES := libdisp_jni  libblock_jni libthtfit_audio_jni
+LOCAL_JNI_SHARED_LIBRARIES := libdisp_jni  libblock_jni libthtfit_audio_jni libserial_port
 
 
 include $(BUILD_PACKAGE)
