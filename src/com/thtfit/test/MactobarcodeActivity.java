@@ -1,12 +1,19 @@
 package com.thtfit.test;
 
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
+
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
+
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,6 +23,9 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
@@ -40,12 +50,32 @@ public class MactobarcodeActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mactobarcode);
         
+        //by Lu
+//		if (ContextCompat.checkSelfPermission(ProductTest.getContext(), Manifest.permission.ACCESS_WIFI_STATE) == PackageManager.PERMISSION_GRANTED) {
+//			Log.d("luzhaojie", "NandflashActivity :: onCreate : have");
+//	      } else {
+//	      	 Log.d("luzhaojie", "NandflashActivity :: onCreate : no");
+//	          ActivityCompat.requestPermissions(this , new String[]{
+//	          		Manifest.permission.ACCESS_WIFI_STATE, 
+//	          		}, 1);
+//	      }
+        
        defBright = getScreenBrightness();
        //saveScreenBrightness(255);	//this will efect the system bright
-       setScreenBrightness(setBright);
+       
+       //This setting will shut down the mechine?? So I noted it.    by Lu
+//       setScreenBrightness(setBright); // by Lu
         
+//        macAddress = getWifiaddr(); //by Lu
+        //by Lu
+        try {
+        	getMacAddr();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        //by Lu 
+        Log.d("luzhaojie", "MactobarcodeActivity::onCreate:macAddress == " + macAddress);
         
-        macAddress = getWifiaddr();
         try{
         	macAddress = macAddress.replaceAll(":", "");
         }catch(NullPointerException e){
@@ -63,11 +93,37 @@ public class MactobarcodeActivity extends Activity{
 		setContentView(iv, new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
             
     }  
+    //by Lu
+    private void getMacAddr() throws SocketException {
+        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();  
+        while (interfaces.hasMoreElements()) {  
+            NetworkInterface iF = interfaces.nextElement();  
+          
+            byte[] addr = iF.getHardwareAddress();  
+            if (addr == null || addr.length == 0) {  
+                continue;  
+            }  
+          
+            StringBuilder buf = new StringBuilder();  
+            for (byte b : addr) {  
+                buf.append(String.format("%02X:", b));  
+            }  
+            if (buf.length() > 0) {  
+                buf.deleteCharAt(buf.length() - 1);  
+            }  
+            String mac = buf.toString();  
+            Log.d("luzhaojie", "interfaceName="+iF.getName()+", mac="+mac);  
+            if("wlan0".equals(iF.getName())) {
+            	macAddress = mac;
+            }
+        }  
+    }
     private String getWifiaddr() {
         WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 
         String macAddressRet = wifiInfo == null ? null : wifiInfo.getMacAddress();
+        Log.d("luzhaojie", "Mac::getWifiaddr: vifiInfo == " + wifiInfo);
         return macAddressRet;
     }
     /** 

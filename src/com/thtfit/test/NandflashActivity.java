@@ -1,20 +1,27 @@
 package com.thtfit.test;
 
 import com.thtfit.test.R;
+
+import android.Manifest;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.TreeMap;
+
+import android.content.pm.PackageManager;
 import android.content.res.Resources.NotFoundException;
 
 public class NandflashActivity extends Activity implements OnClickListener {
@@ -46,6 +53,17 @@ public class NandflashActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.nandflash);
 		mProduct = (ProductTest)getApplication();
+		
+		//by Lu
+		if (ContextCompat.checkSelfPermission(ProductTest.getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+			Log.d("luzhaojie", "NandflashActivity :: onCreate : have");
+        } else {
+        	 Log.d("luzhaojie", "NandflashActivity :: onCreate : no");
+            ActivityCompat.requestPermissions(this , new String[]{
+            		Manifest.permission.WRITE_EXTERNAL_STORAGE, 
+            		Manifest.permission.READ_EXTERNAL_STORAGE,
+            		}, 1);
+        }
 
 		startButton = (Button)findViewById(R.id.button_start);
 		overButton = (Button)findViewById(R.id.button_over);
@@ -77,6 +95,25 @@ public class NandflashActivity extends Activity implements OnClickListener {
 		};
 		mBlock = new Block(mHandle);
 		Log.i(LOG_TAG, "Nandflash Test Activity Created");
+	}
+	//by Lu
+	@Override
+	public void onRequestPermissionsResult(int requestCode,
+			String[] permissions, int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		switch (requestCode) {
+		case 1:
+			if (grantResults.length > 0
+	                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+	                // permission was granted
+				Log.d("luzhaojie", "NandflashActivity::onRequestPermissionsResult:permission was granted");
+	            } else {
+	                // permission denied,
+	            }
+			break;
+		default:
+			break;
+		}
 	}
 	public void handleFlashMessage(int message, TextView text)
 	{

@@ -4,7 +4,7 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_STATIC_JAVA_LIBRARIES := zxing
+LOCAL_STATIC_JAVA_LIBRARIES := zxing androidv4
 
 LOCAL_MODULE_TAGS := eng
 
@@ -20,7 +20,7 @@ include $(BUILD_PACKAGE)
 
 
 include $(CLEAR_VARS)
-LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := zxing:libs/core.jar
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := zxing:libs/core.jar androidv4:libs/android-support-v4.jar
 include $(BUILD_MULTI_PREBUILT)
 
 

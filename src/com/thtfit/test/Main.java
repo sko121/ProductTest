@@ -24,6 +24,9 @@ public class Main extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//by Lu
+		Log.d("luzhaojie", "MainActivity::onCreate:============");
+		
 		setContentView(R.layout.main);
 		flashButton = (Button)findViewById(R.id.button_flash);
 		sdcardButton = (Button)findViewById(R.id.button_sdcard);

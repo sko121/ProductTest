@@ -1,14 +1,18 @@
 package com.thtfit.test;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.hardware.Camera.Size;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +23,14 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources.NotFoundException;
+
+//by Lu
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
 
 public class CameraActivity extends Activity 
 {
@@ -42,7 +53,10 @@ public class CameraActivity extends Activity
 	private Button startButton;
 	private ProductTest mProduct;
 	private AlertDialog mDialog = null;
-
+	
+	//by Lu
+	private static List<Map<String, Object>> reportList;
+	
 	protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera);
@@ -67,6 +81,11 @@ public class CameraActivity extends Activity
            }catch(NotFoundException NotFoundEx){
              Log.d(LOG_TAG, "NotFoundException: " + NotFoundEx.getMessage());
            }
+		    //by Lu
+			try {
+				getPermissionToCreateTitle(reportList, 9);
+			} catch (Exception e) {
+			}
 			titleText.setText(mProduct.getTitle(9));
 	}
 	@Override
@@ -77,8 +96,11 @@ public class CameraActivity extends Activity
 	}
 	private void cameraTest(){
 		Intent mIntent = new Intent();
- 		ComponentName comp = new ComponentName("com.android.awgallery",
-                                "com.android.camera.CameraLauncher");
+// 		ComponentName comp = new ComponentName("com.android.awgallery",
+//                                "com.android.camera.CameraLauncher");
+		//by Lu
+ 		ComponentName comp = new ComponentName("com.android.camera2",
+                "com.android.camera.CameraActivity");
 
 		mIntent.setComponent(comp);
 		//mIntent.addCategory(Intent.CATEGORY_LAUNCHER);
@@ -86,11 +108,24 @@ public class CameraActivity extends Activity
 		//mIntent.setAction("android.intent.action.MAIN");
 		startActivity(mIntent);
 	}
+	//by Lu
+	public void getPermissionToCreateTitle( List list,int position) throws NameNotFoundException {
+		Log.d("luzhaojie", "-----getPermissionToCreateTitle");
+		if (ContextCompat.checkSelfPermission(ProductTest.getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+			Log.d("luzhaojie", "CameraActivity :: getPermissionToCreateTitle : have");
+        } else {
+        	 Log.d("luzhaojie", "CameraActivity :: getPermissionToCreateTitle : no");
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
+        }
+		createTitle(list, position);
+	}
+	@TargetApi(Build.VERSION_CODES.ECLAIR)
 	public static void createTitle(List list, int position)
 	{
 		String info = "";
 		try{
-			Camera mCamera = Camera.open();
+			Log.d("luzhaojie","CameraActivity :: createTitle");
+			Camera mCamera = Camera.open(0);
 			Parameters parameters = mCamera.getParameters(); 
 			int newPixels = 0; 
 			List<Size> psizelist = parameters.getSupportedPictureSizes(); 
@@ -124,6 +159,14 @@ public class CameraActivity extends Activity
 			map.put("title", CAMERA_TEST+info);
 			list.add(position, map);
 		}
+	}
+	//by Lu
+	public static void createTitle1(List list, int position)
+	{
+		    reportList = list;
+			Map<String,Object> map =new HashMap<String,Object>();
+			map.put("title", CAMERA_TEST);
+			list.add(position, map);
 	}
 	OnClickListener viewlisten = new OnClickListener(){
 	public void onClick(View v) {

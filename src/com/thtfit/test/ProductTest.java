@@ -1,7 +1,10 @@
 package com.thtfit.test;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.HashMap;
@@ -13,9 +16,28 @@ public class ProductTest extends Application{
 	private final String report = "/mnt/sdcard/report";
 	public TreeMap<Integer, String> mTreeMap;
 	List<Map<String, Object>> reportList;
+	
+	//by Lu 
+	private static Context pt;
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		if(pt == null){
+			pt = getApplicationContext();
+			Log.d("luzhaojie", "ProductTest::Application onCreate:pt == " + pt);
+			try {
+				ProductTest1();
+			} catch (NameNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	public static Context getContext() {
+		return pt;
+	}
 
 	//create mTreeMap for build (errno) and (error message) Mapper tree
-	public ProductTest(){
+	public void ProductTest1() throws NameNotFoundException{
 		mTreeMap = new TreeMap<Integer, String>();
 		reportList = new ArrayList<Map<String,Object>>();
 		reportList.clear();
@@ -56,24 +78,29 @@ public class ProductTest extends Application{
 		map9.put("title", "触摸屏测试");
 		reportList.add(8, map9);
 
-		CameraActivity.createTitle(reportList, 9);
+		CameraActivity.createTitle1(reportList, 9); // by Lu
+//		getPermissionToCreateTitle( reportList, 9); // by Lu
 
 		DisplayActivity.createHashTable(mTreeMap);
 		Map<String,Object> map11 =new HashMap<String,Object>();
 		map11.put("title", "显示屏测试");
 		reportList.add(10, map11);
+//		reportList.add(9, map11);//by Lu
 
 		Map<String,Object> map12 =new HashMap<String,Object>();
 		map12.put("title", "音乐测试");
 		reportList.add(11, map12);
+//		reportList.add(10, map12);//by Lu
 
 		Map<String,Object> map13 =new HashMap<String,Object>();
 		map13.put("title", "录音测试");
 		reportList.add(12, map13);
+//		reportList.add(11, map13);//by Lu
 
 		Map<String,Object> map14 =new HashMap<String,Object>();
 		map14.put("title", "耳塞测试");
 		reportList.add(13, map14);
+//		reportList.add(12, map14);//by Lu
 	}
 	public String getTitle(int position)
 	{
