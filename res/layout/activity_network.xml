@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.testdemo.MainActivity$PlaceholderFragment" >
+
+
+   
+     <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/presentstatus"/> 
+          <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:text="@string/youxian"/> 
+          <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:text="@string/wuxian"/> 
+        
+         <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/downloadspeed"/> 
+        
+    <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"      
+       >
+   <TextView 
+       android:id="@+id/txt1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+        android:textSize="20sp"
+       android:layout_weight="1"
+       android:text="@string/downloadaddress"/>
+   
+   <EditText 
+       android:id="@+id/edit1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       
+       android:layout_weight="1"
+       android:hint="@string/netaddress"
+       android:text="@string/netaddress"
+       />
+   </LinearLayout>
+     <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"      
+       >
+   <TextView 
+       android:id="@+id/txt2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+        android:textSize="20sp"
+       android:layout_weight="1"
+       android:text="@string/downlaodspeed"/>
+   
+   <TextView 
+       android:id="@+id/edit2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="20sp"
+       android:layout_weight="1"
+       android:text="@string/speed"
+      
+       />
+   </LinearLayout>
+    <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"      
+       >
+   <Button 
+       android:id="@+id/btnDown"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:layout_weight="1"
+       android:onClick="clickMe"
+       android:text="@string/startdownload"/>
+   
+   <Button 
+       android:id="@+id/btnstop"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:onClick="clickMe"      
+       android:text="@string/stopdownload"      
+       />
+   </LinearLayout>
+  
+
+   
+</LinearLayout>
