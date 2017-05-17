@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thtfit.test"
     android:installLocation="auto" >
+    
     <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
 	            android:protectionLevel="signatureOrSystem" />
     <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE" />
@@ -28,6 +29,9 @@
  	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-feature android:name="android.hardware.camera" />
 	<uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
+   
     <application
 		android:name=".ProductTest"
         android:icon="@drawable/icon"

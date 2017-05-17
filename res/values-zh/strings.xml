@@ -5,13 +5,18 @@
     <string name="textresult">"测试结果"</string>
 	<string name="finalresult">"合格"</string>
 	<string name="confirm">"确认结果"</string>
-
+    <string name="youxian">"有线：正常／不正常"</string>
+     <string name="wuxian">"无线：正常／不正常"</string>
+     <string name="downloadspeed">"平均下载速度:0.0KB/s"</string>
+     <string name="downloadaddress">"下载网址"</string>
+	<string name="presentstatus">"当前网络状态："</string>
     <string name="flash">NAND</string>
     <string name="flash_test">"flash"</string>
     <string name="flashTitle">"flash测试"</string>
     <string name="start">"开始"</string>
     <string name="stop">"停止"</string>
 	<string name="pause">"暂停"</string>
+	<string name="netaddress">"http://192.168.10.230/tmp/gdb"</string>
 	<string name="last">"最后"</string>
 	<string name="next">"下一曲"</string>
     <string name="first">"测试结果"</string>
@@ -36,16 +41,18 @@
     <string name="ethernetTitle">"以太网测试"</string>
     <string name="Infrared">"遥控器测试"</string>
     <string name="infrared">"遥控器"</string>
-
+<string name="startdownload">"开始下载"</string>
+  <string name="stopdownload">"停止下载"</string>
     <string name="mouse">"触摸屏"</string>
     <string name="mouseTitle">"触摸屏测试"</string>
 	<string name="mouseTip">"操作提示栏"</string>
     <string name="left">"单击此键"</string>
     <string name="right">"长按此键"</string>
     <string name="drag">"触摸屏"</string>
-
+      <string name="speed">"0.0KB/s"</string>
     <string name="display">"显示"</string>
     <string name="displayTitle">"显示测试"</string>
+     <string name="downlaodspeed">"下载速度"</string>
     <string name="displayOn">"输出DHMI"</string>
     <string name="displayOff">"断开DHMI"</string>
     <string name="currentResolution">"当前分辨率"</string>
@@ -173,6 +180,7 @@
     <string name="serialport">"串口"</string>
     
     <string name="battery">"电池"</string>
+     <string name="network">"网速"</string>
 	 <string name="chargerAcOnline">"交流电连接:"</string>
  	<string name="chargerUsbOnline">"USB线连接:"</string>
 	<string name="chargerWirelessOnline">"无线充电器连接:"</string>

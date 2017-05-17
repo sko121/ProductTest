@@ -5,7 +5,12 @@
     <string name="textresult">"Test result"</string>
 	<string name="finalresult">"Finalresult"</string>
 	<string name="confirm">"Confirm"</string>
-
+	
+    <string name="presentstatus">"presentstatus"</string>
+    <string name="youxian">"youxian"</string>
+     <string name="wuxian">"wuxian"</string>
+     <string name="downloadspeed">"downloadspeed:"0KB/s""</string>
+      <string name="downloadaddress">"downloadaddress"</string>
     <string name="flash">NAND</string>
     <string name="flash_test">"flash"</string>
     <string name="flashTitle">"flash test"</string>
@@ -16,6 +21,7 @@
 	<string name="next">"Next"</string>
     <string name="first">"Test result"</string>
     <string name="second">"Infomation test"</string>
+     <string name="speed">"0.0KB/s"</string>
     <string name="third">"3.Compare file"</string>
     <string name="scrollview_test">"scrollview_test"</string>
     <string name="sdcard">Sdcard</string>
@@ -36,14 +42,16 @@
     <string name="ethernetTitle">"Ethernet test"</string>
     <string name="Infrared">"Infrared test"</string>
     <string name="infrared">"Infrared"</string>
-
+ <string name="startdownload">"startdownload"</string>
+  <string name="stopdownload">"stopdownload"</string>
+  <string name="downlaodspeed">"downlaodspeed"</string>
     <string name="mouse">"Touch screen"</string>
     <string name="mouseTitle">"Touch screen test"</string>
 	<string name="mouseTip">"Operation tips bar"</string>
     <string name="left">"Click on this button"</string>
     <string name="right">"Long press this button"</string>
     <string name="drag">"Touch screen"</string>
-
+<string name="netaddress">"http://192.168.10.230/tmp/gdb"</string>
     <string name="display">"Display"</string>
     <string name="displayTitle">"Display test"</string>
     <string name="displayOn">"Output DHMI"</string>
@@ -171,7 +179,7 @@
 
 
     <string name="serialport">"Serialport"</string>
-    
+    <string name="network">"Network"</string>
 	<string name="battery">"Battery"</string>
     <string name="chargerAcOnline">"ChargerAcOnline:"</string>
  	<string name="chargerUsbOnline">"ChargerUsbOnline:"</string>
