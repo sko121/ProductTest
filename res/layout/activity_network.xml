@@ -5,35 +5,86 @@
     android:orientation="vertical"
     tools:context="com.example.testdemo.MainActivity$PlaceholderFragment" >
 
-
+<LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"      
+       >
    
      <TextView
+        android:id="@+id/tvdgag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"        
+        android:text="@string/netstatus"/> 
+        <TextView
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="@string/presentstatus"/> 
+      
+        /> </LinearLayout>
+        <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"      
+       >
+
           <TextView
+               android:id="@+id/tvv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:text="@string/youxian"/> 
+         <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:visibility="gone"
-        android:text="@string/youxian"/> 
+        
+        /> 
+          
+        </LinearLayout>
+        
+          <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"      
+       >
+        
           <TextView
+        android:id="@+id/tvv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:visibility="invisible"
+        android:textSize="20sp"
+        android:text="@string/wuxian"/>
+            <TextView
         android:id="@+id/tv4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:textSize="20sp"
-        android:text="@string/wuxian"/> 
+        /> </LinearLayout>
         
+            <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"      
+       >
          <TextView
+        android:id="@+id/tvv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/Averagedownloadspeed"/>
+          <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="@string/downloadspeed"/> 
+        />
+          </LinearLayout>
         
     <LinearLayout 
        android:layout_width="match_parent"
@@ -47,7 +98,7 @@
        android:gravity="center"
         android:textSize="20sp"
        android:layout_weight="1"
-       android:text="@string/downloadaddress"/>
+       android:text="@string/Netaddress"/>
    
    <EditText 
        android:id="@+id/edit1"
@@ -71,7 +122,7 @@
        android:gravity="center"
         android:textSize="20sp"
        android:layout_weight="1"
-       android:text="@string/downlaodspeed"/>
+       android:text="@string/downloadspeed"/>
    
    <TextView 
        android:id="@+id/edit2"
@@ -95,6 +146,7 @@
        android:gravity="center"
        android:layout_weight="1"
        android:onClick="clickMe"
+       android:textSize="20sp"
        android:text="@string/startdownload"/>
    
    <Button 
@@ -102,7 +154,8 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_weight="1"
-       android:onClick="clickMe"      
+       android:onClick="clickMe"   
+       android:textSize="20sp"   
        android:text="@string/stopdownload"      
        />
    </LinearLayout>

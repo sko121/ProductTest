@@ -6,11 +6,11 @@
 	<string name="finalresult">"Finalresult"</string>
 	<string name="confirm">"Confirm"</string>
 	
-    <string name="presentstatus">"presentstatus"</string>
-    <string name="youxian">"youxian"</string>
-     <string name="wuxian">"wuxian"</string>
-     <string name="downloadspeed">"downloadspeed:"0KB/s""</string>
-      <string name="downloadaddress">"downloadaddress"</string>
+    <string name="netstatus">"netstatus:"</string>
+    <string name="youxian">"Wired(speed>5Mb/s):"</string>
+     <string name="wuxian">"wireless(speed>1Mb/s):"</string>
+     <string name="Averagedownloadspeed">"Averagedownloadspeed:"</string>
+      <string name="Netaddress">"Netaddress"</string>
     <string name="flash">NAND</string>
     <string name="flash_test">"flash"</string>
     <string name="flashTitle">"flash test"</string>
@@ -44,7 +44,7 @@
     <string name="infrared">"Infrared"</string>
  <string name="startdownload">"startdownload"</string>
   <string name="stopdownload">"stopdownload"</string>
-  <string name="downlaodspeed">"downlaodspeed"</string>
+  <string name="downloadspeed">"downloadspeed"</string>
     <string name="mouse">"Touch screen"</string>
     <string name="mouseTitle">"Touch screen test"</string>
 	<string name="mouseTip">"Operation tips bar"</string>
@@ -198,7 +198,7 @@
 	
 	<string name="mactobarcode">"MAC2Barcode"</string>
 
-	
+	<string name="videoview">"videoviewplay"</string>
 	<string name="usb_version_">USB Version:</string>
 	<string name="speed_">Speed:</string>
 	<string name="protocol_">Protocol:</string>

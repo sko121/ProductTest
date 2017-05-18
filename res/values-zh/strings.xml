@@ -5,11 +5,11 @@
     <string name="textresult">"测试结果"</string>
 	<string name="finalresult">"合格"</string>
 	<string name="confirm">"确认结果"</string>
-    <string name="youxian">"有线：正常／不正常"</string>
-     <string name="wuxian">"无线：正常／不正常"</string>
-     <string name="downloadspeed">"平均下载速度:0.0KB/s"</string>
-     <string name="downloadaddress">"下载网址"</string>
-	<string name="presentstatus">"当前网络状态："</string>
+    <string name="youxian">"有线(平均下载速度>5Mb/s):"</string>
+     <string name="wuxian">"无线(平均下载速度>1Mb/s):"</string>
+     <string name="Averagedownloadspeed">"平均下载速度:"</string>
+     <string name="Netaddress">"网址"</string>
+	<string name="netstatus">"当前网络状态："</string>
     <string name="flash">NAND</string>
     <string name="flash_test">"flash"</string>
     <string name="flashTitle">"flash测试"</string>
@@ -52,7 +52,7 @@
       <string name="speed">"0.0KB/s"</string>
     <string name="display">"显示"</string>
     <string name="displayTitle">"显示测试"</string>
-     <string name="downlaodspeed">"下载速度"</string>
+     <string name="downloadspeed">"下载速度"</string>
     <string name="displayOn">"输出DHMI"</string>
     <string name="displayOff">"断开DHMI"</string>
     <string name="currentResolution">"当前分辨率"</string>
@@ -195,7 +195,7 @@
 	<string name="batteryTechnology">"电池技术:"</string>
 	<string name="charger_yes">"是"</string>
 	<string name="charger_no">"否"</string>
-	
+	<string name="videoview">"视频播放"</string>
 	<string name="mactobarcode">"MAC地址转换为条形码"</string>
 
 </resources>
