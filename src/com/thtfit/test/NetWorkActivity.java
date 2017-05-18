@@ -199,6 +199,7 @@ public class NetWorkActivity extends Activity {
 	            //下载已经开始，检查状态  
 	            queryDownloadStatus();
 	            Toast.makeText(getApplicationContext(), "若要重新下载，请点击STOPDOWNLOAD清除已下载的该内容,", Toast.LENGTH_SHORT).show();
+
 	        }   
 		  
 //			  new NetWorkSpeedUtils(this,mHnadler).startShowNetSpeed();	            
