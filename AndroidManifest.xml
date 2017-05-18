@@ -9,8 +9,8 @@
     
     <!--  <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
 	            android:protectionLevel="signatureOrSystem" />-->
-    <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
-	            android:protectionLevel="signatureOrSystem" />
+<!--    <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
+	            android:protectionLevel="signatureOrSystem" /> -->
     <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -96,6 +96,10 @@
             android:name="MouseActivity"
 			android:screenOrientation="landscape"
             android:label="mouse" />
+       <activity
+            android:name="NetWorkActivity"
+            android:screenOrientation="landscape"
+            android:label="networktest" />
         <activity
             android:name="DisplayActivity"
 			android:screenOrientation="landscape"
@@ -153,6 +157,11 @@
 		    android:name="MactobarcodeActivity"
 		    android:screenOrientation="landscape"
 		    android:label="mactobarcode"
+		     />
+		<activity
+		    android:name="VideoActivity"
+		    android:screenOrientation="landscape"
+		    android:label="VideoPlay"
 		     />
     </application>
 </manifest>

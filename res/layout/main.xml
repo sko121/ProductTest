@@ -204,7 +204,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/mactobarcode"
-        android:textSize="50px" >
-    </Button>
+        android:textSize="50px" ></Button>
+        <Button
+        android:id="@+id/button_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/videoview"
+        android:textSize="50px" ></Button>
+   
    </LinearLayout>
 </LinearLayout>

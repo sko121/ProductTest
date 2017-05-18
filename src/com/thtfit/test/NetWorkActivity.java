@@ -53,7 +53,7 @@ public class NetWorkActivity extends Activity {
 	
 	private EditText address;
 	DownloadManager downloadManager ;
-	private TextView tv,tv2,tv3,tv4,status;
+	private TextView tv,tv2,tv3,tv4,status,tvv3,tvv4;
 	private android.net.NetworkInfo wifi;
 	private android.net.NetworkInfo mobile;
 	private android.net.NetworkInfo ethernet;
@@ -104,26 +104,28 @@ public class NetWorkActivity extends Activity {
 	            queryDownloadStatus();  
 	          
 	            z = (speed+speed2)/i;	 
-           	    tv2.setText("平均下载速度："+String.valueOf(z)+ " KB/s");
-           	    if(ethernet.isAvailable()){
-           	    	tv3.setVisibility(View.VISIBLE);
-           	    	if((float)((speed+speed2)/t)<=640){
-             			tv3.setText("有线(平均下载速度<5Mb/s)：不正常");
-             		}else{
-    	            		
-    	            		tv3.setText("有线(平均下载速度>5Mb/s)：正常");
-    	            	}
-           	    }
-           	 if(wifi.isAvailable()&&!ethernet.isAvailable()){
-         		tv4.setVisibility(View.VISIBLE);;
+           	    tv2.setText(String.valueOf(z)+ " KB/s");
+           	    
+           	 if(wifi.isAvailable()){
+         		tvv4.setVisibility(View.VISIBLE);;
          		
          		if((float)((speed+speed2)/t)<=128){
-         			tv4.setText("无线（平均下载速度<1Mb/s）：不正常");
+         			tv4.setText("abnormal");
          		}else{
 	            		
-	            		tv4.setText("无线(平均下载速度>=1Mb/s)：正常");
+	            		tv4.setText("normal");
 	            	}
         		
+        	}else {
+        		if(ethernet.isAvailable()){
+           	    	tvv3.setVisibility(View.VISIBLE);
+           	    	if((float)((speed+speed2)/t)<=640){
+             			tv3.setText("abnormal");
+             		}else{
+    	            		
+    	            		tv3.setText("normal");
+    	            	}
+           	    }
         	}
 	         //abortBroadcast();
 	            
@@ -145,6 +147,8 @@ public class NetWorkActivity extends Activity {
          tv2 = (TextView) findViewById(R.id.tv2);
          tv3 = (TextView) findViewById(R.id.tv3);
          tv4 = (TextView) findViewById(R.id.tv4);
+         tvv3 = (TextView) findViewById(R.id.tvv3);
+         tvv4 = (TextView) findViewById(R.id.tvv4);
        
 
         
@@ -181,7 +185,7 @@ public class NetWorkActivity extends Activity {
 	        request.setVisibleInDownloadsUi(true);  
 	        //sdcard的目录下的download文件夹  
 	        request.setDestinationInExternalFilesDir(this, Environment.DIRECTORY_DOWNLOADS, "mydown"); 
-	        request.setTitle("下载");
+	        request.setTitle("download");
 			_pressed = true;
 			
 			if(!prefs.contains(DL_ID)){
@@ -233,14 +237,14 @@ public class NetWorkActivity extends Activity {
 			// Toast.LENGTH_SHORT).show();
 			Log.e("ggggggggggggggggggggggggg", "fds");
 			showSetNetworkDialog();
-			tv.setText("网络状态：无网络连接");
+			tv.setText("No network");
 		} else if (wifi.isAvailable()) {
-			tv.setText("网络状态：wifi状态");
+			tv.setText("wifi");
 		} else if (mobile.isAvailable() && !wifi.isAvailable()) {
-			tv.setText("网络状态：移动数据状态");
+			tv.setText("mobile");
 			showWifiNetworkDialog();
 		} else {
-			tv.setText("网络状态：有线");
+			tv.setText("wired");
 		}
 		
 		  
