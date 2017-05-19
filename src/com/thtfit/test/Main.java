@@ -17,7 +17,7 @@ public class Main extends Activity implements OnClickListener {
 	private Button playButton, recorderButton, earplugButton;
 	private Button generalButton, reportButton;
     private Button serialport,batteryButton;
-    private Button mactobarcodeButton,networkButton,btnvideo;
+    private Button mactobarcodeButton,networkButton;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,7 @@ public class Main extends Activity implements OnClickListener {
         batteryButton = (Button)findViewById(R.id.button_battery);
         networkButton = (Button)findViewById(R.id.button_network);
         mactobarcodeButton = (Button)findViewById(R.id.button_mactobarcode);
-        btnvideo=(Button)findViewById(R.id.button_video);
-        btnvideo.setOnClickListener(this);
+       
 		flashButton.setOnClickListener(this);
 		sdcardButton.setOnClickListener(this);
 		sdramButton.setOnClickListener(this);
@@ -150,9 +149,6 @@ public class Main extends Activity implements OnClickListener {
 	}else if(v.equals(networkButton)){
 		startActivity(new Intent(Main.this,NetWorkActivity.class));
 		Log.d(LOG_TAG,"networkButton");
-	}else if(v.equals(btnvideo)){
-		startActivity(new Intent(Main.this,VideoActivity.class));
-		Log.d(LOG_TAG,"btnvideo");
 	}
 	}
 }

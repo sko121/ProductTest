@@ -158,10 +158,6 @@
 		    android:screenOrientation="landscape"
 		    android:label="mactobarcode"
 		     />
-		<activity
-		    android:name="VideoActivity"
-		    android:screenOrientation="landscape"
-		    android:label="VideoPlay"
-		     />
+		
     </application>
 </manifest>
