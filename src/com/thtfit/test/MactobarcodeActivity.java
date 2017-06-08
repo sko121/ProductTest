@@ -22,6 +22,7 @@ import android.graphics.Bitmap.Config;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -37,7 +38,7 @@ import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout.LayoutParams;
 
-public class MactobarcodeActivity extends Activity{
+public class   MactobarcodeActivity extends Activity{
 	
 	private String TAG = "MactobarcodeActivity";
 
@@ -91,6 +92,8 @@ public class MactobarcodeActivity extends Activity{
 		iv.setScaleType(ScaleType.FIT_CENTER);
 		//setContentView(iv);
 		setContentView(iv, new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+		
+		endTest();
             
     }  
     //by Lu
@@ -317,5 +320,19 @@ public class MactobarcodeActivity extends Activity{
 		        
 		        return newBitmap;  
 		    }   
+		    
+		    private void endTest(){
+				new Handler().postDelayed(new Runnable() {
+							
+							@Override
+							public void run() {
+								// TODO Auto-generated method stub
+								MactobarcodeActivity.this.setResult(Mainacitivity.BARCODE);			
+								MactobarcodeActivity.this.finish();
+							}
+						}, 8000);
+				//		setResult(Mainacitivity.RAM);
+//						finish();
+					}
 
 }

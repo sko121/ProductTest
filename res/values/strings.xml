@@ -67,6 +67,17 @@
     <string name="sevenResolution">"1080i60"</string>
     <string name="nineResolution">"1080p50"</string>
     <string name="tenResolution">"1080p60"</string>
+    
+     <string name="main_info">"Test machine as below items:"</string>
+    <string name="main_showinfo">"begin to test:"</string>
+    <string name="main_ram">"memeory test"</string>
+    <string name="main_nand">"nand test"</string>
+    <string name="main_battery">"battery tetst"</string>
+    <string name="main_network">"network test"</string>
+    <string name="main_barcode">"show barcode"</string>
+    <string name="main_music">"music test"</string>
+    <string name="main_video">"video test"</string>
+    <string name="autoTest">"click to Test Auto"</string>
 
 	<string name="recorder">"Sound recording"</string>
 	<string name="recorderTitle">"Sound test"</string>

@@ -18,6 +18,9 @@ public class Main extends Activity implements OnClickListener {
 	private Button generalButton, reportButton;
     private Button serialport,batteryButton;
     private Button mactobarcodeButton,networkButton;
+    
+    //test autolly
+    private Button mBTAutoTest;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,8 @@ public class Main extends Activity implements OnClickListener {
         batteryButton = (Button)findViewById(R.id.button_battery);
         networkButton = (Button)findViewById(R.id.button_network);
         mactobarcodeButton = (Button)findViewById(R.id.button_mactobarcode);
+        
+        mBTAutoTest =(Button) findViewById(R.id.button_autoTest);
        
 		flashButton.setOnClickListener(this);
 		sdcardButton.setOnClickListener(this);
@@ -67,6 +72,7 @@ public class Main extends Activity implements OnClickListener {
 
         serialport.setOnClickListener(this);
 		batteryButton.setOnClickListener(this);
+		mBTAutoTest.setOnClickListener(this);
 		
 		mactobarcodeButton.setOnClickListener(this);
 
@@ -149,6 +155,8 @@ public class Main extends Activity implements OnClickListener {
 	}else if(v.equals(networkButton)){
 		startActivity(new Intent(Main.this,NetWorkActivity.class));
 		Log.d(LOG_TAG,"networkButton");
+	}else if (v.equals(mBTAutoTest)) {
+		startActivity(new Intent(Main.this,Mainacitivity.class));
 	}
 	}
 }

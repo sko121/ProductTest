@@ -95,6 +95,8 @@ public class NandflashActivity extends Activity implements OnClickListener {
 		};
 		mBlock = new Block(mHandle);
 		Log.i(LOG_TAG, "Nandflash Test Activity Created");
+		
+		startTest();
 	}
 	//by Lu
 	@Override
@@ -121,6 +123,7 @@ public class NandflashActivity extends Activity implements OnClickListener {
 			case Block.NANDFLASH_SUCCESS:
 				text.setText(NANDFLASH_SUCCESS_STRING);
 				text.setTextColor(okColor);
+				endTest();
 				break;
 			case Block.NANDFLASH_NOSPC:
 				text.setText(NANDFLASH_NOSPC_STRING);
@@ -193,5 +196,38 @@ public class NandflashActivity extends Activity implements OnClickListener {
 			}
 		}
 	}
+	
+	private void startTest(){
+		firstMessage.setTextColor(okColor);
+		firstMessage.setText(BEING_TEST);
+		if(existThread){
+			return;
+		}
+        mThread = new Thread(){
+            public void run(){
+				existThread = true;
+				Block.forceStop = false;
+				mBlock.nandflashInspection();	
+				existThread = false;
+		}};
+		mThread.start();
+		Log.d(LOG_TAG, "start"); 
+	}
+	
+	private void endTest(){
+			new Handler().postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				NandflashActivity.this.setResult(Mainacitivity.NAND);			
+				NandflashActivity.this.finish();
+			}
+		}, 2000);
+//		setResult(Mainacitivity.RAM);
+//		finish();
+	}
+	
+	
 }
 

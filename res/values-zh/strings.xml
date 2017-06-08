@@ -30,6 +30,7 @@
     <string name="sdSecond">"2.复制文件"</string>
     <string name="sdThird">"3.比较文件"</string>
     <string name="sdram">"内存"</string>
+    <string name="autoTest">"开启自动化测试"</string>
     <string name="memoryTitle">"内存测试"</string>
     <string name="Copied">"复件_"</string>
     <string name="wifi">"wifi"</string>
@@ -66,6 +67,18 @@
     <string name="sevenResolution">"1080i60"</string>
     <string name="nineResolution">"1080p50"</string>
     <string name="tenResolution">"1080p60"</string>
+    
+    <string name="main_info">"test machine as followers:"</string>
+    <string name="main_showinfo">"begin to test:"</string>
+    <string name="main_ram">"memeory test"</string>
+    <string name="main_nand">"nand test"</string>
+    <string name="main_battery">"battery tetst"</string>
+    <string name="main_network">"network test"</string>
+    <string name="main_barcode">"show barcode"</string>
+    <string name="main_music">"music test"</string>
+    <string name="main_video">"video test"</string>
+    
+    
 
 	<string name="recorder">"录音"</string>
 	<string name="recorderTitle">"录音测试"</string>

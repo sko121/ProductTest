@@ -1,12 +1,15 @@
 package com.thtfit.test;
 
 import com.thtfit.test.R;
+
 import android.app.Activity;
 import android.widget.TextView;
 import android.content.BroadcastReceiver;  
 import android.content.Context;  
 import android.content.Intent;  
 import android.content.IntentFilter;  
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.BatteryManager;  
 import android.os.Bundle;  
 import android.util.Log;
@@ -62,6 +65,20 @@ public class BatteryActivity extends Activity {
 		mBatteryChargeCounterText = (TextView)findViewById(R.id.batteryChargeCounterText);
 		mBatteryTemperatureText = (TextView)findViewById(R.id.batteryTemperatureText);
 		mBatteryTechnologyText = (TextView)findViewById(R.id.batteryTechnologyText);
+		
+		mChargerAcOnlineText.setTextColor(Color.GREEN);
+		mChargerUsbOnlineText.setTextColor(Color.GREEN);
+		mChargerWirelessOnlineText.setTextColor(Color.GREEN);
+		mBatteryHealthText.setTextColor(Color.GREEN);
+		mBatteryPresentText.setTextColor(Color.GREEN);
+		mBatteryLevelText.setTextColor(Color.GREEN);
+		mBatteryVoltageText.setTextColor(Color.GREEN);
+		mBatteryCurrentNowText.setTextColor(Color.GREEN);
+		mBatteryChargeCounterText.setTextColor(Color.GREEN);
+		mBatteryTemperatureText.setTextColor(Color.GREEN);
+		mBatteryTechnologyText.setTextColor(Color.GREEN);
+		mBatteryStatusText.setTextColor(Color.GREEN);
+		
         mBatteryYes = this.getResources().getString(R.string.charger_yes);
 		mBatteryNo = this.getResources().getString(R.string.charger_no);
    		
@@ -106,6 +123,8 @@ public class BatteryActivity extends Activity {
 		mBatteryChargeCounterText.setText(String.valueOf(batteryChargeCounter));
 		mBatteryTemperatureText.setText(String.valueOf(batteryTemperature));
 		mBatteryTechnologyText.setText(batteryTechnology);
+		
+		endTest();
     }
 	@Override  
 	public void onPause() {  
@@ -191,5 +210,20 @@ public class BatteryActivity extends Activity {
 		 
 		} 
 	};
+	
+	private void endTest(){
+			new Handler().postDelayed(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							BatteryActivity.this.setResult(Mainacitivity.BATTERY);			
+							BatteryActivity.this.finish();
+						}
+					}, 8000);
+			//		setResult(Mainacitivity.RAM);
+//					finish();
+				}
+		
    	
 }

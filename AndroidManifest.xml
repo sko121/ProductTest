@@ -4,8 +4,7 @@
     android:installLocation="auto" >
     
  	<!-- by Lu -->
- 	 <uses-sdk
-        android:targetSdkVersion="23" />
+ 	 
     
     <!--  <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
 	            android:protectionLevel="signatureOrSystem" />-->
@@ -52,6 +51,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- by tommy20170608 -->
+        <activity
+            android:name="Mainacitivity"
+			android:screenOrientation="landscape"
+            android:label="@string/title_name" 
+           >
+            
+            </activity>
+        
         <activity
             android:name="com.ckl.PointerLocation.PointerLocation"
 			android:screenOrientation="landscape"
@@ -156,7 +165,7 @@
 		<activity
 		    android:name="MactobarcodeActivity"
 		    android:screenOrientation="landscape"
-		    android:label="mactobarcode"
+		    android:label="macToQRcode"
 		     />
 		
     </application>

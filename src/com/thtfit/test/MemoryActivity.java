@@ -76,6 +76,8 @@ public class MemoryActivity extends Activity implements OnClickListener {
 		};
 		mBlock = new Block(mHandle);
 		Log.i(LOG_TAG, "Memory Test Activity Created");
+		
+		startTest();
 	}
 	public void handleMemoryMessage(int message, TextView text)
 	{
@@ -83,6 +85,8 @@ public class MemoryActivity extends Activity implements OnClickListener {
 			case Block.MEMORY_SUCCESS:
 				text.setText(MEMORY_SUCCESS_STRING);
 				text.setTextColor(okColor);
+				endtest();
+				
 				break;
 			case Block.MEMORY_NOMEM:
 				text.setText(MEMORY_NOMEM_STRING);
@@ -150,4 +154,37 @@ public class MemoryActivity extends Activity implements OnClickListener {
 			Log.d(LOG_TAG, "over"); */
 		}
 	}
+	
+	private void startTest(){
+		
+		firstMessage.setTextColor(okColor);
+		firstMessage.setText(BEING_TEST);
+		if(existThread){
+			return;
+		}
+		mThread = new Thread(){
+            public void run(){
+				existThread = true;
+				Block.forceStop = false;
+				mBlock.memoryInspection();	
+				existThread = false;
+		}};
+		mThread.start();
+//		Log.d(LOG_TAG, "mem test failed");	
+	}
+	
+	private void endtest(){
+		new Handler().postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				MemoryActivity.this.setResult(Mainacitivity.RAM);			
+				MemoryActivity.this.finish();
+			}
+		}, 2000);
+//		setResult(Mainacitivity.RAM);
+//		finish();
+	}
+	
 }
