@@ -3,9 +3,6 @@
     package="com.thtfit.test"
     android:installLocation="auto" >
     
- 	<!-- by Lu -->
- 	 
-    
     <!--  <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
 	            android:protectionLevel="signatureOrSystem" />-->
 <!--    <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
@@ -53,13 +50,24 @@
         </activity>
         
         <!-- by tommy20170608 -->
+        <!-- begin -->
         <activity
             android:name="Mainacitivity"
 			android:screenOrientation="landscape"
-            android:label="@string/title_name" 
-           >
-            
-            </activity>
+            android:label="@string/autotest" 
+           > </activity>
+        <activity
+            android:name="MusicActivity"
+			android:screenOrientation="landscape"
+			 android:label="@string/musicactivity" 
+            />
+        <activity
+            android:name="VideoActivity"
+			android:screenOrientation="landscape"
+			 android:label="@string/videoactivity" 
+            />
+        <service android:name="com.thtfit.test.MusicService"/>   
+        <!-- end -->
         
         <activity
             android:name="com.ckl.PointerLocation.PointerLocation"

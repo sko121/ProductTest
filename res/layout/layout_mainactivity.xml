@@ -4,8 +4,24 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical" >
-    <TextView
-        android:id="@+id/textView1"
+    
+    <Button
+        android:id="@+id/bt_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:text="@string/playmusic"
+        android:onClick="onClick"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <Button
+        android:id="@+id/bt_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:text="@string/playvideo"
+        android:onClick="onClick"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+         <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left|top"
@@ -44,8 +60,6 @@
         android:text="@string/main_battery"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    
-
     <TextView
         android:id="@+id/network"
         android:layout_width="wrap_content"
@@ -69,7 +83,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:text="@string/main_music"
-        android:visibility="gone"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
         <TextView
@@ -78,7 +91,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:text="@string/main_video"
-        android:visibility="gone"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

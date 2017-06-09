@@ -68,6 +68,7 @@
     <string name="nineResolution">"1080p50"</string>
     <string name="tenResolution">"1080p60"</string>
     
+    <!-- auto test added by tommy 20170608 -->
      <string name="main_info">"Test machine as below items:"</string>
     <string name="main_showinfo">"begin to test:"</string>
     <string name="main_ram">"memeory test"</string>
@@ -78,6 +79,23 @@
     <string name="main_music">"music test"</string>
     <string name="main_video">"video test"</string>
     <string name="autoTest">"click to Test Auto"</string>
+       <string name="playmusic">"playmusic"</string>
+    <string name="playvideo">"playvideo"</string>
+       <string name="musicactivity">"MusicActivity"</string>
+    <string name="videoactivity">"VideoActivity"</string>
+    <string name="autotest">"auto test"</string>
+    
+    <!-- musicActivity -->
+     <string name="btnPlayorPause">"Play"</string>
+     <string name="plays">"Play"</string>
+    <string name="btnStop">"STOP"</string>
+    <string name="btnQuit">"QUIT"</string>
+    <string name="btnPre">"PREVIOUS"</string>
+    <string name="btnNext">"NEXT"</string>
+ 
+
+    <string name="playing">"Playing"</string>
+    
 
 	<string name="recorder">"Sound recording"</string>
 	<string name="recorderTitle">"Sound test"</string>

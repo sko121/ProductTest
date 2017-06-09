@@ -11,7 +11,15 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
+import com.thtfit.test.R;
+
+/**
+ * Created by tommy on 2017/06/08
+ */
 
 public class Mainacitivity extends Activity {
 	public static final int RAM=0;
@@ -24,7 +32,6 @@ public class Mainacitivity extends Activity {
 	public static final int SHOW=7;
 	public static final String LOG_TAG = "fallwater";
 	
-	
 	private TextView mShowTextView;
 	private TextView mRam;
 	private TextView mNand;
@@ -33,74 +40,20 @@ public class Mainacitivity extends Activity {
 	private TextView mNetWork;
 	private TextView mMusic;
 	private TextView mVideo;
-	
-	
-	
-	private Handler mHandler = new Handler(){
-			public void handleMessage(android.os.Message msg) {
-				
-				switch (msg.what) {
-				case RAM:	
-					startActivityForResult(new Intent(Mainacitivity.this, MemoryActivity.class),0);
-					Log.d(LOG_TAG, "memory");
-					
-					break;
-				case NAND:					
-					startActivity(new Intent(Mainacitivity.this, NandflashActivity.class));
-					Log.d(LOG_TAG, "nand");
-					break;
-				case BATTERY:
-					startActivity(new Intent(Mainacitivity.this, BatteryActivity.class));
-					Log.d(LOG_TAG, "battery");
-					break;
-				case NETWORK:
-					startActivity(new Intent(Mainacitivity.this,NetWorkActivity.class));
-					Log.d(LOG_TAG,"networkButton");
-					break;
-				case BARCODE:
-					startActivity(new Intent(Mainacitivity.this,MactobarcodeActivity.class));
-					Log.d(LOG_TAG,"mactobarcode");
-					break;
-				case MUSIC:
-					startActivity(new Intent(Mainacitivity.this, PlayActivity.class));
-			        Log.d(LOG_TAG, "display");
-					break;
-				case VIDEO:
-					
-					break;
-				case SHOW:
-					
-					break;
-
-				default:
-					break;
-				}
-				
-				
-			}
-	};
+	private Handler mHandler = new Handler();
 		
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
-			// TODO Auto-generated method stub
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.layout_mainactivity);
-			
 			initView();
 			requestAllPermissons();
 			beginTest();
-			
-			
-		
 		}
 
 		private void requestAllPermissons() {
-			// TODO Auto-generated method stub
-			//by Lu
 			if (ContextCompat.checkSelfPermission(ProductTest.getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-				Log.d("luzhaojie", "NandflashActivity :: onCreate : have");
 	        } else {
-	        	 Log.d("luzhaojie", "NandflashActivity :: onCreate : no");
 	            ActivityCompat.requestPermissions(this , new String[]{
 	            		Manifest.permission.WRITE_EXTERNAL_STORAGE, 
 	            		Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -108,7 +61,6 @@ public class Mainacitivity extends Activity {
 	        }
 		}
 		
-		//by Lu
 		@Override
 		public void onRequestPermissionsResult(int requestCode,
 				String[] permissions, int[] grantResults) {
@@ -117,10 +69,7 @@ public class Mainacitivity extends Activity {
 			case 1:
 				if (grantResults.length > 0
 		                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-		                // permission was granted
-					Log.d("luzhaojie", "NandflashActivity::onRequestPermissionsResult:permission was granted");
 		            } else {
-		                // permission denied,
 		            }
 				break;
 			default:
@@ -129,21 +78,16 @@ public class Mainacitivity extends Activity {
 		}
 
 		private void beginTest() {
-			// TODO Auto-generated method stub
 				mHandler.postDelayed(new Runnable() {
-				
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
 					mShowTextView.setText("now begin RAM test:");
-					mHandler.sendEmptyMessageDelayed(RAM,2000);
-					
+					startActivityForResult(new Intent(Mainacitivity.this, MemoryActivity.class),0);
 				}
-			}, 2000);
+			}, 4000);
 		}
 
 		private void initView() {
-			// TODO Auto-generated method stub
 			mShowTextView = (TextView)findViewById(R.id.showtextview);
 			mRam = (TextView)findViewById(R.id.ram);
 			mNand = (TextView)findViewById(R.id.nand);
@@ -152,24 +96,18 @@ public class Mainacitivity extends Activity {
 			mBarcode = (TextView)findViewById(R.id.barcode);
 			mMusic = (TextView)findViewById(R.id.music);
 			mVideo = (TextView)findViewById(R.id.video);
-						
 		}
 		
 		@Override
 		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-			
-			Log.i(LOG_TAG,"onActivityResult_resultcode:" + resultCode);
-			// TODO Auto-generated method stub
 			if (requestCode==0) {
 				switch (resultCode) {
 				case RAM:	
 					mShowTextView.setText("RAM test successfully ,now begin to test NAND");
 					mRam.setTextColor(Color.GREEN);
 					mHandler.postDelayed(new Runnable() {
-						
 						@Override
 						public void run() {
-							// TODO Auto-generated method stub
 							startActivityForResult(new Intent(Mainacitivity.this, NandflashActivity.class),0);
 						}
 					}, 4000);
@@ -178,10 +116,8 @@ public class Mainacitivity extends Activity {
 					mShowTextView.setText("NAND test successfully ,now begin to test BATTERY");
 					mNand.setTextColor(Color.GREEN);
 					mHandler.postDelayed(new Runnable() {
-						
 						@Override
 						public void run() {
-							// TODO Auto-generated method stub
 							startActivityForResult(new Intent(Mainacitivity.this, BatteryActivity.class),0);
 						}
 					}, 4000);
@@ -193,8 +129,6 @@ public class Mainacitivity extends Activity {
 						
 						@Override
 						public void run() {
-							// TODO Auto-generated method stub
-//							startActivityForResult(new Intent(Mainacitivity.this, NetWorkActivity.class),0);
 							startActivityForResult(new Intent(Mainacitivity.this, MactobarcodeActivity.class),0);
 						}
 					}, 4000);
@@ -204,61 +138,48 @@ public class Mainacitivity extends Activity {
 					mShowTextView.setText("NETWORK test successfully ,now begin to test reading QR code");
 					mBattery.setTextColor(Color.GREEN);
 					mHandler.postDelayed(new Runnable() {
-						
 						@Override
 						public void run() {
-							// TODO Auto-generated method stub
 							startActivityForResult(new Intent(Mainacitivity.this, MactobarcodeActivity.class),0);
-//							startActivityForResult(new Intent(Mainacitivity.this, VideoActivity.class),0);
 						}
 					}, 4000);
 					break;
 				case BARCODE:
-					mShowTextView.setText("BARCODE test success :");
+					mShowTextView.setText("BARCODE test successfully ,now begin to test play MUSIC");
 					mBarcode.setTextColor(Color.GREEN);
-					testNextTime();
-					break;
-				case MUSIC:
-					mShowTextView.setText("MUSIC test successfully ,now begin to test VIDEO");
-					mBattery.setTextColor(Color.GREEN);
 					mHandler.postDelayed(new Runnable() {
-						
 						@Override
 						public void run() {
-							// TODO Auto-generated method stub
-							startActivityForResult(new Intent(Mainacitivity.this, PlayActivity.class),0);
-//							startActivityForResult(new Intent(Mainacitivity.this, VideoActivity.class),0);
+							startActivityForResult(new Intent(Mainacitivity.this, MusicActivity.class),0);
+						}
+					}, 4000);
+					break;
+				case MUSIC:
+					mShowTextView.setText("MUSIC test successfully ,now begin to test play VIDEO");
+					mMusic.setTextColor(Color.GREEN);
+					mHandler.postDelayed(new Runnable() {
+						@Override
+						public void run() {
+							startActivityForResult(new Intent(Mainacitivity.this, VideoActivity.class),0);
 						}
 					}, 4000);
 					break;
 				case VIDEO:
-					mShowTextView.setText("VIDEO test success");
-					mBattery.setTextColor(Color.GREEN);
+					mShowTextView.setText("VIDEO test successfully");
+					mVideo.setTextColor(Color.GREEN);
 					testNextTime();
-					
 					break;
-				case SHOW:
-					
-					break;
-
 				default:
 					break;
 				}
 			}
-			
-			
-			
 			super.onActivityResult(requestCode, resultCode, data);
 		}
 
 		private void testNextTime() {
-			// TODO Auto-generated method stub
 			mHandler.postDelayed(new Runnable() {
-				
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
-//					startActivityForResult(new Intent(Mainacitivity.this, PlayActivity.class),0);
 					mShowTextView.setText("all test items test successly ,now begin to test from begining ...");
 					mRam.setTextColor(Color.WHITE);
 					mNand.setTextColor(Color.WHITE);
@@ -268,16 +189,27 @@ public class Mainacitivity extends Activity {
 					mMusic.setTextColor(Color.WHITE);
 					mVideo.setTextColor(Color.WHITE);
 					mHandler.postDelayed(new Runnable() {
-						
 						@Override
 						public void run() {
-							// TODO Auto-generated method stub
 							beginTest();
 						}
 					}, 2000);
 				}
 			}, 2000);
 		}
-	
-
+		public void onClick(View view) {
+			Log.i("fallwater", "onclick");
+			switch (view.getId()) {
+			case R.id.bt_music:
+				startActivity(new Intent(Mainacitivity.this, MusicActivity.class));
+				Log.i("fallwater", "onclick_music");
+				break;
+			case R.id.bt_video:
+				startActivity(new Intent(Mainacitivity.this, VideoActivity.class));
+				Log.i("fallwater", "onclick_video");
+				break;
+			default:
+				break;
+			}
+		}
 }
