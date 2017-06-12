@@ -123,11 +123,10 @@ public class MusicActivity extends Activity implements View.OnClickListener {
 
 	@Override
 	protected void onResume() {
-		if (musicService.mp.isPlaying()) {
-			musicStatus.setText(getResources().getString(R.string.playing));
-		} else {
-			musicStatus.setText(getResources().getString(R.string.pause));
+		if (!musicService.mp.isPlaying()) {
+			musicService.mp.start();
 		}
+		
 		super.onResume();
 	}
 
@@ -158,13 +157,16 @@ public class MusicActivity extends Activity implements View.OnClickListener {
 
 	@Override
 	protected void onPause() {
-		musicService.stop();
-		seekBar.setProgress(0);
-		unbindService(sc);
+		if (musicService.mp.isPlaying()) {
+			musicService.mp.pause();
+		}
 		super.onPause();
 	}
 	@Override
 	public void onDestroy() {
+		seekBar.setProgress(0);
+		musicService.stop();
+		unbindService(sc);
 		super.onDestroy();
 	}
 
