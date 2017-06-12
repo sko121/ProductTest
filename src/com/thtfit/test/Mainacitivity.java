@@ -105,64 +105,76 @@ public class Mainacitivity extends Activity {
 				case RAM:	
 					mShowTextView.setText("RAM test successfully ,now begin to test NAND");
 					mRam.setTextColor(Color.GREEN);
-					mHandler.postDelayed(new Runnable() {
+					mHandler.removeCallbacks(mRunnable);
+					mRunnable =new Runnable() {
 						@Override
 						public void run() {
 							startActivityForResult(new Intent(Mainacitivity.this, NandflashActivity.class),0);
 						}
-					}, 4000);
+					} ;
+					mHandler.postDelayed(mRunnable, 4000);
 					break;
 				case NAND:	
 					mShowTextView.setText("NAND test successfully ,now begin to test BATTERY");
 					mNand.setTextColor(Color.GREEN);
-					mHandler.postDelayed(new Runnable() {
+					mHandler.removeCallbacks(mRunnable);
+					mRunnable = new Runnable() {
 						@Override
 						public void run() {
 							startActivityForResult(new Intent(Mainacitivity.this, BatteryActivity.class),0);
 						}
-					}, 4000);
+					};
+					mHandler.postDelayed(mRunnable, 4000);
 					break;
 				case BATTERY:
 					mShowTextView.setText("BATTERY test successfully ,now begin to test reading QR code");
 					mBattery.setTextColor(Color.GREEN);
-					mHandler.postDelayed(new Runnable() {
+					mHandler.removeCallbacks(mRunnable);
+					mRunnable = new Runnable() {
 						
 						@Override
 						public void run() {
 							startActivityForResult(new Intent(Mainacitivity.this, MactobarcodeActivity.class),0);
 						}
-					}, 4000);
+					};
+					mHandler.postDelayed(mRunnable, 4000);
 					
 					break;
 				case NETWORK:
 					mShowTextView.setText("NETWORK test successfully ,now begin to test reading QR code");
 					mBattery.setTextColor(Color.GREEN);
-					mHandler.postDelayed(new Runnable() {
+					mHandler.removeCallbacks(mRunnable);
+					mRunnable =new Runnable() {
 						@Override
 						public void run() {
 							startActivityForResult(new Intent(Mainacitivity.this, MactobarcodeActivity.class),0);
 						}
-					}, 4000);
+					} ;
+					mHandler.postDelayed(mRunnable, 4000);
 					break;
 				case BARCODE:
 					mShowTextView.setText("BARCODE test successfully ,now begin to test play MUSIC");
 					mBarcode.setTextColor(Color.GREEN);
-					mHandler.postDelayed(new Runnable() {
+					mHandler.removeCallbacks(mRunnable);
+					mRunnable =new Runnable() {
 						@Override
 						public void run() {
 							startActivityForResult(new Intent(Mainacitivity.this, MusicActivity.class),0);
 						}
-					}, 4000);
+					} ;
+					mHandler.postDelayed(mRunnable, 4000);
 					break;
 				case MUSIC:
 					mShowTextView.setText("MUSIC test successfully ,now begin to test play VIDEO");
 					mMusic.setTextColor(Color.GREEN);
-					mHandler.postDelayed(new Runnable() {
+					mHandler.removeCallbacks(mRunnable);
+					mRunnable = new Runnable() {
 						@Override
 						public void run() {
 							startActivityForResult(new Intent(Mainacitivity.this, VideoActivity.class),0);
 						}
-					}, 4000);
+					};
+					mHandler.postDelayed(mRunnable, 4000);
 					break;
 				case VIDEO:
 					mShowTextView.setText("VIDEO test successfully");
@@ -177,7 +189,8 @@ public class Mainacitivity extends Activity {
 		}
 
 		private void testNextTime() {
-			mHandler.postDelayed(new Runnable() {
+			mHandler.removeCallbacks(mRunnable);
+			mRunnable = new Runnable(){
 				@Override
 				public void run() {
 					mShowTextView.setText("all test items test successly ,now begin to test from begining ...");
@@ -195,21 +208,35 @@ public class Mainacitivity extends Activity {
 						}
 					}, 2000);
 				}
-			}, 2000);
+			};
+			mHandler.postDelayed(mRunnable, 2000);
 		}
+		
 		public void onClick(View view) {
 			Log.i("fallwater", "onclick");
 			switch (view.getId()) {
 			case R.id.bt_music:
-				startActivity(new Intent(Mainacitivity.this, MusicActivity.class));
-				Log.i("fallwater", "onclick_music");
+				mHandler.removeCallbacks(mRunnable);
+				finish();
+//				startActivity(new Intent(Mainacitivity.this, MusicActivity.class));
+//				Log.i("fallwater", "onclick_music");
 				break;
 			case R.id.bt_video:
 				startActivity(new Intent(Mainacitivity.this, VideoActivity.class));
-				Log.i("fallwater", "onclick_video");
+//				Log.i("fallwater", "onclick_video");
 				break;
 			default:
 				break;
 			}
+		}
+		
+		Runnable mRunnable ;
+		
+		@Override
+		public void onBackPressed() {
+			// TODO Auto-generated method stub
+//			super.onBackPressed();
+			mHandler.removeCallbacks(mRunnable);
+			finish();
 		}
 }

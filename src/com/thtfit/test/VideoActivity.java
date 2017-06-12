@@ -1,6 +1,7 @@
 package com.thtfit.test;
 
 import java.io.File;
+
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.widget.MediaController;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.widget.VideoView;
+
 import com.thtfit.test.R;
 
 /**
@@ -30,7 +32,7 @@ public class VideoActivity extends Activity {
 		mVideoView = (VideoView) findViewById(R.id.video1);
 		mMediaController = new MediaController(this);
 		String uri = "android.resource://" + getPackageName() + "/"
-				+ R.raw.heart;
+				+ R.raw.ts;
 		mVideoView.setVideoURI(Uri.parse(uri));
 		mVideoView.setMediaController(mMediaController);
 		mMediaController.setMediaPlayer(mVideoView);
@@ -39,6 +41,8 @@ public class VideoActivity extends Activity {
 			@Override
 			public void onCompletion(MediaPlayer arg0) {
 				endtest();
+//	            mVideoView.seekTo(0);  
+//	            mVideoView.start();
 			}
 		});
 		mVideoView.start();
@@ -53,6 +57,7 @@ public class VideoActivity extends Activity {
     public void onResume() {  
         if(mPositionWhenPaused >= 0) {  
             mVideoView.seekTo(mPositionWhenPaused);  
+            mVideoView.start();
             mPositionWhenPaused = -1;  
         }  
         super.onResume();  
@@ -67,5 +72,12 @@ public class VideoActivity extends Activity {
 			}
 		}, 2000);
 	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+//		super.onBackPressed();
+		endtest();
+	}
+	
 
 }

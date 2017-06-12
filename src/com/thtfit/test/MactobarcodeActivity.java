@@ -334,5 +334,11 @@ public class   MactobarcodeActivity extends Activity{
 				//		setResult(Mainacitivity.RAM);
 //						finish();
 					}
+		    
+		    @Override
+			public void onBackPressed() {
+				// TODO Auto-generated method stub
+//				super.onBackPressed();
+			}
 
 }

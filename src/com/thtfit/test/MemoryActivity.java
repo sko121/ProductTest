@@ -91,12 +91,15 @@ public class MemoryActivity extends Activity implements OnClickListener {
 			case Block.MEMORY_NOMEM:
 				text.setText(MEMORY_NOMEM_STRING);
 				text.setTextColor(errColor);
+				endtest();
 				break;
 			case Block.MEMORY_COPY_ERROR:
 				text.setText(MEMORY_COPY_ERROR_STRING);
 				text.setTextColor(errColor);
+				endtest();
 			default:
 				Log.d(LOG_TAG, "unknown message: "+message);
+				endtest();
 		}
 	}	
 	public static void createTitle(List list, int position)
@@ -185,6 +188,12 @@ public class MemoryActivity extends Activity implements OnClickListener {
 		}, 2000);
 //		setResult(Mainacitivity.RAM);
 //		finish();
+	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+//		super.onBackPressed();
 	}
 	
 }

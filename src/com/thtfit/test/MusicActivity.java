@@ -17,8 +17,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
 import com.thtfit.test.MusicService.Callback;
 import com.thtfit.test.R;
+
 import java.text.SimpleDateFormat;
 
 /**
@@ -101,7 +103,6 @@ public class MusicActivity extends Activity implements View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		Log.i("fallwater", "MusicActivity_onCreate");
 		setContentView(R.layout.layout_music);
-		musicService = new MusicService();
 		bindServiceConnection();
 		musicStatus = (TextView) this.findViewById(R.id.MusicStatus);
 		musicTime = (TextView) this.findViewById(R.id.MusicTime);
@@ -136,19 +137,19 @@ public class MusicActivity extends Activity implements View.OnClickListener {
 			musicService.playOrPause();
 			break;
 		case R.id.BtnStop:
-			musicService.stop();
-			seekBar.setProgress(0);
+//			musicService.stop();
+//			seekBar.setProgress(0);
 			break;
 		case R.id.BtnQuit:
-			musicService.stop();
-			handler.removeCallbacks(runnable);
-			unbindService(sc);
-			endtest();
-			try {
-				System.exit(0);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+//			musicService.stop();
+//			handler.removeCallbacks(runnable);
+//			unbindService(sc);
+//			endtest();
+//			try {
+//				System.exit(0);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 			break;
 		default:
 			break;
@@ -156,10 +157,14 @@ public class MusicActivity extends Activity implements View.OnClickListener {
 	}
 
 	@Override
-	public void onDestroy() {
+	protected void onPause() {
 		musicService.stop();
 		seekBar.setProgress(0);
 		unbindService(sc);
+		super.onPause();
+	}
+	@Override
+	public void onDestroy() {
 		super.onDestroy();
 	}
 
@@ -172,5 +177,17 @@ public class MusicActivity extends Activity implements View.OnClickListener {
 				MusicActivity.this.finish();
 			}
 		}, 2000);
+	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+//		super.onBackPressed();
+		if (musicService!= null&&seekBar!=null) {
+			musicService.stop();
+			seekBar.setProgress(0);
+			unbindService(sc);
+			endtest();
+		}
 	}
 }

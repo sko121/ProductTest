@@ -128,21 +128,26 @@ public class NandflashActivity extends Activity implements OnClickListener {
 			case Block.NANDFLASH_NOSPC:
 				text.setText(NANDFLASH_NOSPC_STRING);
 				text.setTextColor(errColor);
+				endTest();
 				break;
 			case Block.NANDFLASH_NOMEM:
 				text.setText(NANDFLASH_NOMEM_STRING);
 				text.setTextColor(errColor);
+				endTest();
 				break;
 			case Block.NANDFLASH_EACCESS:
 				text.setText(NANDFLASH_EACCESS_STRING);
 				text.setTextColor(errColor);
+				endTest();
 				break;
 			case Block.NANDFLASH_COPY_ERROR:
 				text.setText(NANDFLASH_COPY_ERROR_STRING);
 				text.setTextColor(errColor);
+				endTest();
 				break;
 			default:
 				Log.d(LOG_TAG, "unknown message: "+message);
+				endTest();
 		}
 	}
 	public static void createTitle(List list, int position)
@@ -226,6 +231,12 @@ public class NandflashActivity extends Activity implements OnClickListener {
 		}, 2000);
 //		setResult(Mainacitivity.RAM);
 //		finish();
+	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+//		super.onBackPressed();
 	}
 	
 	

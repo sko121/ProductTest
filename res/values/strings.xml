@@ -84,6 +84,7 @@
        <string name="musicactivity">"MusicActivity"</string>
     <string name="videoactivity">"VideoActivity"</string>
     <string name="autotest">"auto test"</string>
+    <string name="stop_test">"Stop test"</string>
     
     <!-- musicActivity -->
      <string name="btnPlayorPause">"Play"</string>
