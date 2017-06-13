@@ -32,7 +32,7 @@ public class VideoActivity extends Activity {
 		mVideoView = (VideoView) findViewById(R.id.video1);
 		mMediaController = new MediaController(this);
 		String uri = "android.resource://" + getPackageName() + "/"
-				+ R.raw.ts;
+				+ R.raw.video;
 		mVideoView.setVideoURI(Uri.parse(uri));
 		mVideoView.setMediaController(mMediaController);
 		mMediaController.setMediaPlayer(mVideoView);
@@ -76,7 +76,7 @@ public class VideoActivity extends Activity {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 //		super.onBackPressed();
-		endtest();
+//		endtest();
 	}
 	
 

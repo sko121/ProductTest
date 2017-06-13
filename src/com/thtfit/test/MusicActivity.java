@@ -185,11 +185,11 @@ public class MusicActivity extends Activity implements View.OnClickListener {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 //		super.onBackPressed();
-		if (musicService!= null&&seekBar!=null) {
-			musicService.stop();
-			seekBar.setProgress(0);
-			unbindService(sc);
-			endtest();
-		}
+//		if (musicService!= null&&seekBar!=null) {
+//			musicService.stop();
+//			seekBar.setProgress(0);
+//			unbindService(sc);
+//			endtest();
+//		}
 	}
 }
