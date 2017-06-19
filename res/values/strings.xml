@@ -5,7 +5,7 @@
     <string name="textresult">"Test result"</string>
 	<string name="finalresult">"Finalresult"</string>
 	<string name="confirm">"Confirm"</string>
-	
+
     <string name="netstatus">"netstatus:"</string>
     <string name="youxian">"Wired(speed>5Mb/s):"</string>
      <string name="wuxian">"wireless(speed>1Mb/s):"</string>
@@ -67,7 +67,7 @@
     <string name="sevenResolution">"1080i60"</string>
     <string name="nineResolution">"1080p50"</string>
     <string name="tenResolution">"1080p60"</string>
-    
+
     <!-- auto test added by tommy 20170608 -->
      <string name="main_info">"Test machine as below items:"</string>
     <string name="main_showinfo">"begin to test:"</string>
@@ -85,7 +85,8 @@
     <string name="videoactivity">"VideoActivity"</string>
     <string name="autotest">"auto test"</string>
     <string name="stop_test">"Stop test"</string>
-    
+    <string name="IccSerialNumberActivity">"IccSerialNumber"</string>
+
     <!-- musicActivity -->
      <string name="btnPlayorPause">"Play"</string>
      <string name="plays">"Play"</string>
@@ -93,14 +94,16 @@
     <string name="btnQuit">"QUIT"</string>
     <string name="btnPre">"PREVIOUS"</string>
     <string name="btnNext">"NEXT"</string>
- 
 
-    <string name="playing">"Playing"</string>
-    
+    <!-- IccSerialNumberActivity -->
+     <string name="imei">"IMEI"</string>
+     <string name="tel">"MSISDN"</string>
+    <string name="iccid">"ICCID"</string>
+    <string name="imsi">"IMSI"</string>
 
 	<string name="recorder">"Sound recording"</string>
+	<string name="playing">"Playing"</string>
 	<string name="recorderTitle">"Sound test"</string>
-
 	<string name="play">"Music"</string>
 	<string name="playTitle">"Music test"</string>
 
@@ -225,8 +228,9 @@
 	<string name="batteryTechnology">"BatteryTechnology:"</string>
 	<string name="charger_yes">"Yes"</string>
 	<string name="charger_no">"No"</string>
-	
+
 	<string name="mactobarcode">"MAC2Barcode"</string>
+	<string name="IccSerialNumber">"IccSerialNumber"</string>
 
 	<string name="videoview">"videoviewplay"</string>
 	<string name="usb_version_">USB Version:</string>

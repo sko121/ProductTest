@@ -17,7 +17,7 @@ public class Main extends Activity implements OnClickListener {
 	private Button playButton, recorderButton, earplugButton;
 	private Button generalButton, reportButton;
     private Button serialport,batteryButton;
-    private Button mactobarcodeButton,networkButton;
+    private Button mactobarcodeButton,networkButton,iccSerialNumberButton;
     
     //test autolly
     private Button mBTAutoTest;
@@ -49,6 +49,8 @@ public class Main extends Activity implements OnClickListener {
         batteryButton = (Button)findViewById(R.id.button_battery);
         networkButton = (Button)findViewById(R.id.button_network);
         mactobarcodeButton = (Button)findViewById(R.id.button_mactobarcode);
+        iccSerialNumberButton = (Button)findViewById(R.id.button_IccSerialNumber);
+        
         
         mBTAutoTest =(Button) findViewById(R.id.button_autoTest);
        
@@ -75,6 +77,7 @@ public class Main extends Activity implements OnClickListener {
 		mBTAutoTest.setOnClickListener(this);
 		
 		mactobarcodeButton.setOnClickListener(this);
+		iccSerialNumberButton.setOnClickListener(this);
 
 	}
     @Override
@@ -158,5 +161,9 @@ public class Main extends Activity implements OnClickListener {
 	}else if (v.equals(mBTAutoTest)) {
 		startActivity(new Intent(Main.this,Mainacitivity.class));
 	}
+    else if (v.equals(iccSerialNumberButton)) {
+    	Log.d(LOG_TAG, "iccSerialNumber");
+    	startActivity(new Intent(Main.this,IccSerialNumberActivity.class));
+    }
 	}
 }

@@ -213,6 +213,13 @@
         android:gravity="center"
         android:text="@string/mactobarcode"
         android:textSize="50px" ></Button>
+       <Button
+        android:id="@+id/button_IccSerialNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/IccSerialNumber"
+        android:textSize="50px" />
       
    </LinearLayout>
 </LinearLayout>
