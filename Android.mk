@@ -6,7 +6,7 @@ include $(CLEAR_VARS)
 
 LOCAL_STATIC_JAVA_LIBRARIES := zxing androidv4
 
-LOCAL_MODULE_TAGS := eng
+LOCAL_MODULE_TAGS := eng samples
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
@@ -20,7 +20,9 @@ include $(BUILD_PACKAGE)
 
 
 include $(CLEAR_VARS)
-LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := zxing:libs/core.jar androidv4:libs/android-support-v4.jar
+#LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := zxing:libs/core.jar androidv4:libs/android-support-v4.jar
+#packages/apps/Settings defined zxing:libs/core.jar
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := androidv4:libs/android-support-v4.jar
 include $(BUILD_MULTI_PREBUILT)
 
 

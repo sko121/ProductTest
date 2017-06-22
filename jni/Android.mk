@@ -74,6 +74,7 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE:= libthtfit_audio_jni
 include $(BUILD_SHARED_LIBRARY)
 
+ifneq ($(LIBSERIAL_PORT_USE_SYSTEM),true)
 include $(CLEAR_VARS)
 
 TARGET_PLATFORM := android-3
@@ -82,5 +83,5 @@ LOCAL_SRC_FILES := SerialPort.c
 LOCAL_LDLIBS    := -llog
 
 include $(BUILD_SHARED_LIBRARY)
-
+endif
 
