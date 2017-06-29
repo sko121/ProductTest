@@ -93,6 +93,29 @@
         android:textSize="30px" />
     </LinearLayout>
 
+    <!-- show baseband version  -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/baseband"
+        android:textSize="30px" />
+    <TextView
+        android:id="@+id/tv_baseband"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="#333333"
+        android:textColor="#000000"
+        android:textSize="30px" />
+    </LinearLayout>
+
   <!-- show infomation -->
     <TextView
         android:id="@+id/tv_info"
@@ -101,5 +124,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100px"
         android:textSize="30px" />
+
+
 
 </LinearLayout>

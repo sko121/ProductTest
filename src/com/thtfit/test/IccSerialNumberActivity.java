@@ -16,10 +16,15 @@ import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.Manifest;
+import android.os.SystemProperties;
 
 public class IccSerialNumberActivity extends Activity  {
 
+	private static final String KEY_BASEBAND_VERSION = "gsm.version.baseband";
+
     private TextView minfo,mimei,mtel,miccid,mimsi;
+    //add  "baseband_version"
+    private TextView mBasebandVersion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,8 @@ public class IccSerialNumberActivity extends Activity  {
 		mimsi = (TextView)findViewById(R.id.imsi);
 		mimsi.setTextColor(Color.GREEN);
 		minfo = (TextView)findViewById(R.id.tv_info);
+		mBasebandVersion = (TextView)findViewById(R.id.tv_baseband);
+		mBasebandVersion.setTextColor(Color.GREEN);
 
 		requestAllPermissons();
 		showInfo();
@@ -59,6 +66,10 @@ public class IccSerialNumberActivity extends Activity  {
         miccid.setText(iccID);
         String imsi =tm.getSubscriberId();     //取出IMSI,international mobiles subscriber identity国际移动用户号码标识，
         mimei.setText(imsi);
+
+        String baseband = SystemProperties.get(KEY_BASEBAND_VERSION,getResources().getString(R.string.device_info_default));
+        mBasebandVersion.setText(baseband);//write baseband verison info into textview ,such as EC25AFAR02A03M4G,if current device has no 4G,it write "unknown"
+
 	}
 
 	private void requestAllPermissons() {
