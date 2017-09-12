@@ -109,7 +109,7 @@ public class NetWorkActivity extends Activity {
            	 if(wifi.isAvailable()){
          		tvv4.setVisibility(View.VISIBLE);;
          		
-         		if((float)((speed+speed2)/t)<=128){
+         		if((float)((speed+speed2)/t)<=1024){
          			tv4.setText("abnormal");
          		}else{
 	            		
@@ -119,7 +119,7 @@ public class NetWorkActivity extends Activity {
         	}else {
         		if(ethernet.isAvailable()){
            	    	tvv3.setVisibility(View.VISIBLE);
-           	    	if((float)((speed+speed2)/t)<=640){
+           	    	if((float)((speed+speed2)/t)<=7168){
              			tv3.setText("abnormal");
              		}else{
     	            		

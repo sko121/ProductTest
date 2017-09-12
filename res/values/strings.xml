@@ -7,8 +7,8 @@
 	<string name="confirm">"Confirm"</string>
 
     <string name="netstatus">"netstatus:"</string>
-    <string name="youxian">"Wired(speed>5Mb/s):"</string>
-     <string name="wuxian">"wireless(speed>1Mb/s):"</string>
+    <string name="youxian">"Wired(speed>7MB/s):"</string>
+     <string name="wuxian">"wireless(speed>1MB/s):"</string>
      <string name="Averagedownloadspeed">"Averagedownloadspeed:"</string>
       <string name="Netaddress">"Netaddress"</string>
     <string name="flash">NAND</string>
