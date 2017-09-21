@@ -14,7 +14,7 @@ LOCAL_PACKAGE_NAME := ProductTest
 LOCAL_DEX_PREOPT := false
 LOCAL_CERTIFICATE := shared
 LOCAL_JNI_SHARED_LIBRARIES := libdisp_jni  libblock_jni libthtfit_audio_jni libserial_port
-
+LOCAL_MODULE_PATH := $(TARGET_OUT)/preinstall
 
 include $(BUILD_PACKAGE)
 
